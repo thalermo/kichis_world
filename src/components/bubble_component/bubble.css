@@ -1,15 +1,22 @@
-/** Iphone resolution */
-body {
-  width: 100vw;
-  height: 100vh;
-  background-color: cornsilk;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+@font-face {
+  font-family: "retro-gaming";
+  src: url(./c_src/fonts/Retro\ Gaming.ttf);
+  font-style: normal;
 }
 
-/********Typing Effect **********/
+.iphone_se_resolution {
+  width: 375px;
+  height: 667px;
+  background-color: rgb(255, 220, 243);
+}
 
+.speech_style {
+  width: fit-content;
+  background-color: aqua;
+  /* background-image: url(./c_src/images/pixel-speech-bubble.jpg); */
+}
+
+/* Animation typing text */
 .typewriter {
   color: #000;
   font-family: "retro-gaming";
