@@ -1,18 +1,17 @@
 import "./App.css";
 import welcome from "./components/bubble_texts/welcome_text";
 import Bubble from "./components/Bubble";
-// import "./index.css";
 
-console.log("hey App");
+// import "./index.css";
 
 function App() {
   return (
     <div className="App">
-      <Bubble className="typewriter" />
+      {welcome.map((element) => (
+        <Bubble key={element.key} text={element.phrase} />
+      ))}
     </div>
   );
 }
 
 export default App;
-
-console.log(welcome);

@@ -1,50 +1,116 @@
+:root {
+  --bg-color: rgb(255, 255, 255);
+  --typewriterSpeed: 3s;
+  --typewriterCharacters: 24;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 @font-face {
   font-family: "retro-gaming";
   src: url(/src/fonts/Retro_Gaming.ttf);
   font-style: normal;
 }
 
-.iphone_se_resolution {
-  width: 375px;
-  height: 667px;
-  background-color: rgb(255, 220, 243);
+.bubble_speech_bg {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  height: 100px;
+  width: 350px;
+  /* background-color: red; */
+  background-image: url(/src/images/speech-bubble.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+
+  /* background-color: rgb(225, 0, 146); */
 }
 
-.speech_style {
-  width: fit-content;
-  background-color: aqua;
-  /* background-image: url(./c_src/images/pixel-speech-bubble.jpg); */
+.continue-btn {
+  background: #7c7c7c;
+  border-bottom: 6px inset rgba(0, 0, 0, 0.5);
+  border-left: 6px inset rgba(0, 0, 0, 0.5);
+  border-right: 6px inset rgba(255, 255, 255, 0.5);
+  border-top: 6px inset rgba(255, 255, 255, 0.5);
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 2.2rem;
+  font-family: "retro-gaming";
+  margin: 1rem;
+  min-width: 200px;
+  padding: 0.5rem;
+  text-transform: uppercase;
+  width: auto;
 }
 
 /* Animation typing text */
-.typewriter {
-  color: #000;
-  font-family: "retro-gaming";
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: 0.15em solid orange; /* The typwriter cursor */
-  white-space: nowrap; /* Keeps the content on a single line */
-  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: 0.15em; /* Adjust as needed */
-  animation: typing 3.5s steps(30, end), blink-caret 0.5s step-end infinite;
+.type_effect {
+  font-family: retro-gaming, Courier, monospace;
+  position: relative;
+  font-size: 1.3rem;
+  width: max-content;
+  background: var(--bg-color);
+  /* to center the typing text */
+  margin-bottom: 8%;
+  margin-left: 5%;
 }
 
-/* The typing effect */
-@keyframes typing {
-  from {
-    width: 0;
-  }
+.type_effect::before,
+.type_effect::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.type_effect::before {
+  background: var(--bg-color);
+  animation: typewriter var(--typewriterSpeed)
+    steps(var(--typewriterCharacters)) 1s forwards;
+}
+
+.type_effect::after {
+  width: 0.125em;
+  background: black;
+  animation: typewriter var(--typewriterSpeed)
+      steps(var(--typewriterCharacters)) 1s forwards,
+    blink 750ms steps(var(--typewriterCharacters)) infinite;
+}
+
+@keyframes typewriter {
   to {
-    width: 100%;
+    left: 100%;
   }
 }
 
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-  from,
+@keyframes blink {
   to {
-    border-color: transparent;
+    background: transparent;
   }
-  50% {
-    border-color: orange;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#yt-link {
+  position: absolute;
+  bottom: 2em;
+  width: 100%;
+  color: rgba(0, 0, 0, 0.72);
+
+  &:hover,
+  &:focus {
+    color: teal;
   }
 }
