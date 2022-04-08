@@ -29,7 +29,7 @@ const welcome = {
   scene5: {
     key: 5,
     title: "your name",
-    phrase: "What is your name?",
+    phrase: "Perfect! What is your name?",
     //action: prompt(""),
   },
   scene6: {
@@ -40,7 +40,7 @@ const welcome = {
   scene7: {
     key: 7,
     title: "next page",
-    phrase: "tap on me to continue ",
+    phrase: "Give me some attention to continue ",
   },
 };
 

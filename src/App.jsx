@@ -1,6 +1,6 @@
 import "./App.css";
-import welcome from "./components/bubble_component/bubble_texts/welcome_text";
-import Bubble from "./components/bubble_component/Bubble";
+import welcome from "./components/bubble_texts/welcome_text";
+import Bubble from "./components/Bubble";
 // import "./index.css";
 
 console.log("hey App");
