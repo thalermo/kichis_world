@@ -2,8 +2,10 @@
 /* --width-size: 414px;
   --height-size: 896px;
 } */
-*{padding: 0;
-  margin: 0;}
+* {
+  padding: 0;
+  margin: 0;
+}
 .stage {
   background-image: url(/src/images/Kichis_room.png);
   /* background-size: 100%; */
@@ -12,8 +14,9 @@
   justify-content: space-evenly;
   height: 100vh;
   align-items: center;
-  /* padding-top: 30%; /*
-  padding-left: 12%;
+  /* padding-top: 30%; */
+  /* padding-left: 12%; */
+  /* padding-right: 12%; */
   /* width: var(--width-size);
   height: var(--height-size); */
 
