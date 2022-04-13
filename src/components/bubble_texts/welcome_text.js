@@ -8,16 +8,16 @@ const welcome = [
   //   title: "welcome",
   //   phrase: "Welcome to Kichi's World!",
   // },
-  // {
-  //   key: 2,
-  //   title: "Kichi appearers",
-  //   phrase: "My name is Kichi!",
-  // },
   {
-    key: 3,
-    title: "tutorial",
-    phrase: "Tap on me to continue",
+    key: 2,
+    title: "Kichi appearers",
+    phrase: "My name is Kichi!",
   },
+  // {
+  //   key: 3,
+  //   title: "tutorial",
+  //   phrase: "Tap on me to continue",
+  // },
 
   // {
   //   key: 4,
