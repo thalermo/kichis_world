@@ -2,10 +2,12 @@
   --bg-color: rgb(255, 255, 255);
   --typewriterSpeed: 3s;
   --typewriterCharacters: 24;
+  --font-size: 4.5rem;
 }
 
 * {
   box-sizing: border-box;
+  font-size: 10px;
 }
 
 @font-face {
@@ -14,50 +16,40 @@
   font-style: normal;
 }
 
+/*  Bubble Shape Element          */
+
 .bubble_speech_bg {
   display: flex;
   align-items: center;
   justify-content: flex-start;
 
-  height: 100px;
-  width: 350px;
-  /* background-color: red; */
-  background-image: url(/src/images/speech-bubble.png);
+  padding-left: 5%;
+  padding-bottom: 1.5%;
+
+  height: 15%;
+  width: 100%;
+  /* background-color: rgb(255, 248, 248); */
+
+  background-image: url(/src/images/Speech_bubble_white.png);
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 88%;
 
+  /* background-color: cornsilk; */
   /* background-color: rgb(225, 0, 146); */
-}
-
-.continue-btn {
-  background: #7c7c7c;
-  border-bottom: 6px inset rgba(0, 0, 0, 0.5);
-  border-left: 6px inset rgba(0, 0, 0, 0.5);
-  border-right: 6px inset rgba(255, 255, 255, 0.5);
-  border-top: 6px inset rgba(255, 255, 255, 0.5);
-  box-sizing: border-box;
-  color: white;
-  cursor: pointer;
-  display: inline-block;
-  font-size: 2.2rem;
-  font-family: "retro-gaming";
-  margin: 1rem;
-  min-width: 200px;
-  padding: 0.5rem;
-  text-transform: uppercase;
-  width: auto;
 }
 
 /* Animation typing text */
 .type_effect {
   font-family: retro-gaming, Courier, monospace;
   position: relative;
-  font-size: 1.3rem;
+  font-size: var(--font-size);
   width: max-content;
   background: var(--bg-color);
-  /* to center the typing text */
-  margin-bottom: 8%;
-  margin-left: 5%;
+
+  /** to center the typing text  and filling the gap of the background*/
+  /* margin-bottom: 8%;
+  margin-left: 1%;
+  padding: 3rem; */
 }
 
 .type_effect::before,

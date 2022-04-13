@@ -1,0 +1,22 @@
+/* :root { */
+/* --width-size: 414px;
+  --height-size: 896px;
+} */
+
+.stage {
+  background-image: url(/src/images/Kichis_room.png);
+  /* background-size: 100%; */
+  height: 100vh;
+  padding-top: 50%;
+  padding-left: 12%;
+  /* width: var(--width-size);
+  height: var(--height-size); */
+
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
+}
+
+/* Iphone Resolution */
+/* height: 2532px 
+width: 1170px */
