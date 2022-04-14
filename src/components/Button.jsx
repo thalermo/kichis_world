@@ -4,7 +4,7 @@ export const PlusButton = () => {
   return (
     <div className="plus-minus--buttons ">
       <div className="video-game-button plus-grid">+</div>
-      {/* <div className="video-game-button minus-grid">-</div> */}
+      <div className="video-game-button minus-grid">-</div>
     </div>
   );
 };
