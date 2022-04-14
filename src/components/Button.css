@@ -2,8 +2,7 @@
   font-family: "Press Start 2p";
 }
 .plus-minus--buttons {
-  display: inline-grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
   justify-content: space-between;
   width: 100vw;
 }
