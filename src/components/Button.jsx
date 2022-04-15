@@ -4,7 +4,7 @@ export const PlusButton = () => {
   return (
     <div className="plus-minus--buttons ">
       <div className="video-game-button plus-grid">+</div>
-      {/* <div className="video-game-button minus-grid">-</div> */}
+      <div className="video-game-button minus-grid">-</div>
     </div>
   );
 };
@@ -14,7 +14,11 @@ export const MinusButton = () => {
 };
 
 export const SelectButton = () => {
-  return <span className="start-btn">SELECT</span>;
+  return (
+    <div>
+      <span className="start-btn">SELECT</span>;
+    </div>
+  );
 };
 
 export const StartButton = () => {
