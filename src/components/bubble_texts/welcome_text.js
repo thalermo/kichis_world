@@ -35,7 +35,7 @@ const welcome = [
   {
     key: 6,
     title: "your name",
-    phrase: "What is your name?",
+      phrase: "wewe",
     //action: prompt(""),
   },
   {
