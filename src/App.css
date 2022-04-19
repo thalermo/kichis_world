@@ -7,7 +7,7 @@
   margin: 0;
 }
 .stage {
-  background-image: url(/src/images/Kichis_room.png);
+  background-image: url(/src/images/wide_screen_bg.png);
   /* background-size: 100%; */
   display: flex;
   flex-direction: column;

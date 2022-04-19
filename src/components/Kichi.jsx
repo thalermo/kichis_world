@@ -1,8 +1,8 @@
-import kichi from "../images/kichi.webp";
-import "./Kichi.css";
+import kichi from '../images/kichi.webp';
+import './Kichi.css';
 const Kichi = (props) => (
   // wrap it in a div so I can add the onClick attribute
-  <div onClick={props.action}>
+  <div className="figure_container" onClick={props.action}>
     <img src={kichi} alt="Kichi" className="figure" />
   </div>
 );

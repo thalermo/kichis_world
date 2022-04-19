@@ -1,7 +1,11 @@
+.figure_container {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+}
+
 .figure {
-  padding-right: 10%;
-  width: 80rem;
-  height: 80rem;
-  max-width: 80rem;
-  margin-bottom: 5rem;
+  width: 30%;
+  height: auto;
+  /* max-width: 80rem; */
 }

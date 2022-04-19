@@ -1,5 +1,5 @@
 // import welcome from "./bubble_texts/welcome_text";
-import "./bubble.css";
+import './bubble.css';
 
 function Bubble(props) {
   return (

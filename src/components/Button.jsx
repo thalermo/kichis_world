@@ -1,4 +1,4 @@
-import "./Button.css";
+import './Button.css';
 
 export const PlusButton = () => {
   return (
@@ -15,7 +15,7 @@ export const MinusButton = () => {
 
 export const SelectButton = () => {
   return (
-    <div>
+    <div className="StartButton_container">
       <span className="start-btn">SELECT</span>;
     </div>
   );
