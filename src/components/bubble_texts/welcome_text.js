@@ -33,13 +33,8 @@ const welcome = [
 
   {
     key: 6,
-<<<<<<< HEAD
     title: 'your name',
     phrase: 'What is your name?',
-=======
-    title: "your name",
-      phrase: "wewe",
->>>>>>> 7eeaad0f140d752602bff4c2510f73ff79db9162
     //action: prompt(""),
   },
   {
