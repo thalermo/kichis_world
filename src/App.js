@@ -9,9 +9,21 @@ import { StartButton, PlusButton, SelectButton } from './components/Button';
 
 function App() {
   const [indexCounter, setIndexCounter] = useState(0);
+  // declare the name of the user
+
+  const [userInfo, setUserInfo] = useState({
+    id: '',
+    user: '',
+    task: '',
+    time: '',
+  });
 
   const handleFigureClick = () => {
-    setIndexCounter(indexCounter + 1);
+    // setIndexCounter(indexCounter + 1);
+
+    setUserInfo({ ...userInfo, user: 'Dan' });
+    //setUserInfo({task: varible})
+    // setUserInfo({ ...userInfo, task: 'hit the gym' });
   };
 
   return (
