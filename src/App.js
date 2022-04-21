@@ -4,13 +4,13 @@ import Bubble from './components/Bubble';
 import React, { useState } from 'react';
 import Kichi from './components/Kichi';
 import { StartButton, PlusButton, SelectButton } from './components/Button';
+import BubbleUser from './components/BubbleUser';
 
 // import "./index.css";
 
 function App() {
   const [indexCounter, setIndexCounter] = useState(0);
-  // declare the name of the user
-
+  // declare the state with userInfo
   const [userInfo, setUserInfo] = useState({
     id: '',
     user: '',
@@ -18,10 +18,16 @@ function App() {
     time: '',
   });
 
-  const handleFigureClick = () => {
-    // setIndexCounter(indexCounter + 1);
+  // welcome[0].key = userInfo;
+  // console.log(welcome);
 
-    setUserInfo({ ...userInfo, user: 'Dan' });
+  const handleFigureClick = () => {
+    setIndexCounter(indexCounter + 1);
+
+    setUserInfo({ ...userInfo, user: '' });
+
+    // const userUpdate = welcome[6].phrase;
+    // `Nice to meet you ${userInfo.user}`;
     //setUserInfo({task: varible})
     // setUserInfo({ ...userInfo, task: 'hit the gym' });
   };
@@ -31,7 +37,11 @@ function App() {
       <div className="stage">
         <Bubble currentIndex={indexCounter} text={welcome} />
         <Kichi action={handleFigureClick} />
-
+        <BubbleUser
+          action={indexCounter}
+          userInfo={userInfo}
+          setUserInfo={setUserInfo}
+        />
         <SelectButton />
 
         <PlusButton />

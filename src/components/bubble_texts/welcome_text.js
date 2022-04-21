@@ -1,6 +1,6 @@
 // welcome page
 
-let userName = 'Dan';
+//let userName = 'Dan';
 const welcome = [
   {
     key: 1,
@@ -40,7 +40,7 @@ const welcome = [
   {
     key: 7,
     title: 'greeting ',
-    phrase: 'Nice to meet you ' + userName + ' !',
+    phrase: ' ',
   },
   {
     key: 8,

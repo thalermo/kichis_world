@@ -39,6 +39,11 @@
   /* background-color: rgb(225, 0, 146); */
 }
 
+.user-input {
+  font-family: 'retro-gaming';
+  font-size: 3rem;
+}
+
 /* Animation typing text */
 .type_effect {
   font-family: retro-gaming, Courier, monospace;
