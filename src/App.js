@@ -1,16 +1,22 @@
-import './App.css';
+import React, { useEffect, useState } from 'react';
+// script js file with array and objects
 import welcome from './components/bubble_texts/welcome_text';
-import Bubble from './components/Bubble';
-import React, { useState } from 'react';
-import Kichi from './components/Kichi';
-import { StartButton, PlusButton, SelectButton } from './components/Button';
+// figure bubble speech above and user bubble underneath the figure
+import BubbleKichi from './components/BubbleKichi';
 import BubbleUser from './components/BubbleUser';
+// just the figure with click function
+import Kichi from './components/Kichi';
 
-// import "./index.css";
+// CSS files:
+import './App.css';
+import './components/Buttons.css';
+//import { StartButton, PlusButton, SelectButton } from './components/Buttons';
 
 function App() {
+  // state for iteration the welcome_text array
   const [indexCounter, setIndexCounter] = useState(0);
-  // declare the state with userInfo
+  const [show, setShow] = useState(false);
+  // info state, to get inputs from the user
   const [userInfo, setUserInfo] = useState({
     id: '',
     user: '',
@@ -18,34 +24,49 @@ function App() {
     time: '',
   });
 
-  // welcome[0].key = userInfo;
-  // console.log(welcome);
+  useEffect(() => {
+    setTimeout(() => setShow(true), 10000);
+  }, []);
 
-  const handleFigureClick = () => {
+  // clicking on teh figure will iterating the text array
+  // const handleFigureClick = () => {
+  //   setIndexCounter(indexCounter + 1);
+  //   setUserInfo({ ...userInfo, user: '' });
+  // };
+
+  const handleClick = () => {
     setIndexCounter(indexCounter + 1);
-
     setUserInfo({ ...userInfo, user: '' });
-
-    // const userUpdate = welcome[6].phrase;
-    // `Nice to meet you ${userInfo.user}`;
-    //setUserInfo({task: varible})
-    // setUserInfo({ ...userInfo, task: 'hit the gym' });
   };
 
   return (
     <div className="App">
+      {/* the background of the figure = div className stage  */}
       <div className="stage">
-        <Bubble currentIndex={indexCounter} text={welcome} />
-        <Kichi action={handleFigureClick} />
+        {/* upper bubble text, figure text component */}
+
+        <BubbleKichi currentIndex={indexCounter} text={welcome} />
+
+        {setTimeout(() => {
+          <h1>Hello</h1>;
+        }, 2000)}
+        {/* figure component */}
+        {/* <Kichi action={handleFigureClick} /> */}
+        {show && (
+          <button className="continue" onClick={handleClick}>
+            Click to continue
+          </button>
+        )}
+        {/* user input component */}
+
         <BubbleUser
           action={indexCounter}
           userInfo={userInfo}
           setUserInfo={setUserInfo}
         />
-        <SelectButton />
-
-        <PlusButton />
+        {/* stage div  */}
       </div>
+      {/* app div  */}
     </div>
   );
 }

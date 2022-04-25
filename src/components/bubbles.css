@@ -42,6 +42,7 @@
 .user-input {
   font-family: 'retro-gaming';
   font-size: 3rem;
+  width: 95%;
 }
 
 /* Animation typing text */
@@ -111,4 +112,8 @@
   &:focus {
     color: teal;
   }
+}
+
+input::placeholder {
+  font-size: 18px;
 }

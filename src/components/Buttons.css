@@ -2,6 +2,12 @@
   font-family: 'Press Start 2p';
 }
 
+.continue {
+  width: 250px;
+  height: 50px;
+  font-size: 20px;
+}
+
 .plus-minus--buttons {
   display: flex;
   justify-content: space-evenly;
