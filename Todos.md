@@ -42,3 +42,5 @@
   Dōki, the key D will open the Doki door for more motivation. etc.
 
 - place on the doors some japanese words
+
+I done this -- npm install react react-dom

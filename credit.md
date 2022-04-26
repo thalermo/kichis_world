@@ -3,6 +3,15 @@
 Typing text: https://css-tricks.com/snippets/css/typewriter-effect/
 
 https://codepen.io/geoffgraham/pen/jrWwWM
+https://codepen.io/Gthibaud/pen/MqpmXE
+https://codemyui.com/retro-yes-no-popup-dialog-box/
+https://codepen.io/Gthibaud/pen/MqpmXE
+great btns retro
+https://codepen.io/b1tn3r/pen/YjOzRv
+shadow inspitarion
+https://getcssscan.com/css-box-shadow-examples
+gradient
+https://webgradients.com/
 
 draft
 

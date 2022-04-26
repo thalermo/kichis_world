@@ -1,32 +1,28 @@
 // import welcome from "./bubble_texts/welcome_text";
+import React, { useState } from 'react';
 import './bubbles.css';
 import welcome from './bubble_texts/welcome_text';
 
-function BubbleUser(props) {
-  const something = (event) => {
-    if (event.keyCode === 13) {
-      props.setUserInfo({ ...props.userInfo, user: event.target.value });
-      console.log(props.userInfo);
+function BubbleUser() {
+  const [userName, setUserName] = useState('');
+  const [userTask, setUserTask] = useState('');
+  const [taskTime, setTaskTime] = useState('');
 
-      welcome[6].phrase = `Nice to meet you ${event.target.value}`;
-      console.log(welcome);
-    }
+  const getUserName = (event) => {
+    setUserName(event.target.value);
+    console.log(userName);
   };
 
   return (
-    <>
-      {props.action === 4 && (
-        <div className="bubble_speech_bg">
-          <div>
-            <input
-              placeholder="write here your name..."
-              className="user-input"
-              type="text"
-            />
-          </div>
-        </div>
-      )}
-    </>
+    <div className="bubble_speech_bg">
+      <div>
+        <input
+          placeholder="write here your name..."
+          className="user-input"
+          type="text"
+        />
+      </div>
+    </div>
   );
 }
 

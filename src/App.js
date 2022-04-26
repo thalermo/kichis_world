@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 // script js file with array and objects
-import welcome from './components/bubble_texts/welcome_text';
+//import welcome from './components/bubble_texts/welcome_text';
 // figure bubble speech above and user bubble underneath the figure
-import BubbleKichi from './components/BubbleKichi';
-import BubbleUser from './components/BubbleUser';
+//import BubbleKichi from './components/BubbleKichi';
+//import BubbleUser from './components/BubbleUser';
 // just the figure with click function
-import Kichi from './components/Kichi';
+//import Kichi from './components/Kichi';
+import FirstPage from './components/FirstPage';
+import IntroPage from './components/IntroPage';
 
 // CSS files:
 import './App.css';
@@ -17,15 +19,9 @@ function App() {
   const [indexCounter, setIndexCounter] = useState(0);
   const [show, setShow] = useState(false);
   // info state, to get inputs from the user
-  const [userInfo, setUserInfo] = useState({
-    id: '',
-    user: '',
-    task: '',
-    time: '',
-  });
 
   useEffect(() => {
-    setTimeout(() => setShow(true), 10000);
+    setInterval(() => setShow(true), 5000);
   }, []);
 
   // clicking on teh figure will iterating the text array
@@ -34,39 +30,13 @@ function App() {
   //   setUserInfo({ ...userInfo, user: '' });
   // };
 
-  const handleClick = () => {
-    setIndexCounter(indexCounter + 1);
-    setUserInfo({ ...userInfo, user: '' });
-  };
+  // const handleClick = () => {
+  //   setIndexCounter(indexCounter + 1);
+  // };
 
   return (
     <div className="App">
-      {/* the background of the figure = div className stage  */}
-      <div className="stage">
-        {/* upper bubble text, figure text component */}
-
-        <BubbleKichi currentIndex={indexCounter} text={welcome} />
-
-        {setTimeout(() => {
-          <h1>Hello</h1>;
-        }, 2000)}
-        {/* figure component */}
-        {/* <Kichi action={handleFigureClick} /> */}
-        {show && (
-          <button className="continue" onClick={handleClick}>
-            Click to continue
-          </button>
-        )}
-        {/* user input component */}
-
-        <BubbleUser
-          action={indexCounter}
-          userInfo={userInfo}
-          setUserInfo={setUserInfo}
-        />
-        {/* stage div  */}
-      </div>
-      {/* app div  */}
+      <FirstPage />
     </div>
   );
 }
