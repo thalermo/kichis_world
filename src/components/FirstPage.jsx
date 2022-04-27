@@ -6,7 +6,7 @@ import './bubbles.css';
 import { useState, useEffect } from 'react';
 import welcome from './bubble_texts/welcome_text';
 
-const FirstPage = () => {
+const FirstPage = (props) => {
   const [userName, setUserName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -23,7 +23,6 @@ const FirstPage = () => {
   const [conPcolor, setConPcolor] = useState('');
 
   const [show, setShow] = useState(false);
-  //const [isGreen, setIsGreen] = useState(false);
 
   let UserInfo = [];
 
@@ -55,8 +54,8 @@ const FirstPage = () => {
       setEEmail('Must be a valid email address');
       setEColor('red');
     }
-
-    if (password.length > 8) {
+    // Change it again
+    if (password.length > 4) {
       setEPassword('');
       setPColor('green');
     } else {
@@ -72,19 +71,22 @@ const FirstPage = () => {
       setConPcolor('red');
     }
     //! push the information to the last property in the welcome array
-    if (
-      uColor === 'green' &&
-      eColor === 'green' &&
-      pColor === 'green' &&
-      conPcolor === 'green'
-    ) {
-      welcome.push(UserInfo);
-      console.log(UserInfo);
-      console.log(welcome);
-    } else {
-      console.log('shit');
-    }
   };
+
+  //Todo: try to polish the code after finishing some stuff
+  if (
+    uColor === 'green' &&
+    eColor === 'green' &&
+    pColor === 'green' &&
+    conPcolor === 'green'
+  ) {
+    welcome.push(UserInfo);
+    console.log(UserInfo);
+    console.log(welcome);
+    props.setStatus('yes');
+  } else {
+    console.log('shit');
+  }
 
   return (
     <div className="page1">

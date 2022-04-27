@@ -23,6 +23,8 @@ import './App.css';
 function App() {
   // state for iteration the welcome_text array
   const [indexCounter, setIndexCounter] = useState(1);
+  const [status, setStatus] = useState('');
+  console.log(status);
   // const [show, setShow] = useState(false);
 
   // info state, to get inputs from the user
@@ -32,21 +34,22 @@ function App() {
   // }, []);
 
   // clicking on the figure will iterating the text array
-  // const handleFigureClick = () => {
-  //   setIndexCounter(indexCounter + 1);
-  //   console.log('click');
-  //   console.log(indexCounter);
-  // };
+  const handleFigureClick = () => {
+    setIndexCounter(indexCounter + 1);
+    console.log('click');
+    console.log(indexCounter);
+  };
 
   return (
     <div className="App">
-      <FirstPage />
-
-      {/* <div className="stage">
+      {status === '' && <FirstPage status={status} setStatus={setStatus} />}
+      {status === 'yes' && (
+        <div className="stage">
           <BubbleKichi text={welcome} indexCounter={indexCounter} />
           <Kichi action={handleFigureClick} />
           <SubmitBtn />
-       </div> */}
+        </div>
+      )}
     </div>
   );
 }
