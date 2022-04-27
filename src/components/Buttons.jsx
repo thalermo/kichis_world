@@ -24,3 +24,7 @@ export const SelectButton = () => {
 export const StartButton = () => {
   return <span className="start-btn">START</span>;
 };
+
+export const SubmitBtn = () => {
+  return <button className="submit-btn ">SUBMIT</button>;
+};

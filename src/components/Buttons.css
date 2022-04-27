@@ -97,3 +97,41 @@
   position: relative;
   top: 0.2em;
 }
+
+/*! --------- SUBMIT BTN ---------------*/
+
+.submit-btn {
+  font-family: 'retro-gaming';
+  font-size: 2rem;
+
+  width: 25rem;
+  height: 6rem;
+
+  cursor: pointer;
+  transition: 0.5s;
+
+  font-size: 2.5rem;
+  background: white;
+  padding: 0.3rem 3.4rem;
+  border: 3px solid black;
+  margin-right: 2.6rem;
+  box-shadow: 0 0 0 black;
+  transition: all 0.2s;
+}
+
+.submit-btn:last-child {
+  margin: 0;
+}
+
+.submit-btn:hover {
+  font-size: 3rem;
+  background: #ffff03f8;
+  box-shadow: 1rem 0.4rem 0 rgb(0, 0, 0);
+  transform: translate(-0.4rem, -0.4rem);
+  border: dotted black 4px;
+}
+
+.submit-btn:active {
+  box-shadow: 0 0 0 black;
+  transform: translate(0, 0);
+}

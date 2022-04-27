@@ -2,7 +2,7 @@
   --bg-color: rgb(255, 255, 255);
   --typewriterSpeed: 3s;
   --typewriterCharacters: 24;
-  --font-size: 2rem;
+  --font-size: 2.7rem;
 }
 
 * {
@@ -23,10 +23,11 @@
   align-items: center;
   justify-content: flex-start;
   min-height: 20%;
-  width: 30%;
+  width: 55rem;
+  min-width: 50rem;
 
-  padding-left: 1.5%;
-  padding-bottom: 1.5%;
+  padding-left: 3rem;
+  padding-bottom: 2rem;
 
   /* background-color: rgb(255, 248, 248); */
 

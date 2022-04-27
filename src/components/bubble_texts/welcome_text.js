@@ -4,43 +4,49 @@
 const welcome = [
   {
     key: 0,
-    title: 'welcome',
-    phrase: "Welcome to Kichi's World!",
+    title: 'Hello',
+    phrase: "Kon'nichiwa! My name is Kichi!",
   },
   {
     key: 1,
     title: 'Kichi appearers',
-    phrase: 'Hello! My name is Kichi!',
+    phrase: 'Tap on me to continue',
   },
-  // {
-  //   key: 2,
-  //   title: 'tutorial',
-  //   phrase: 'Tap on me to continue',
-  // },
-
-  // {
-  //   key: 3,
-  //   title: 'joke after clicking',
-  //   phrase: 'I love the attention hihi',
-  //   //action: "clicking on Kichi",
-  // },
   {
     key: 2,
+    title: 'tutorial',
+    phrase: 'Nice to meet you Dan',
+  },
+
+  {
+    key: 3,
     title: 'your name',
     phrase: 'What is your name?',
     //action: prompt(""),
   },
 
   {
-    key: 3,
+    key: 4,
     title: 'greeting ',
     phrase: '',
   },
   {
-    key: 4,
+    key: 5,
     title: 'next page',
     phrase: 'Give me some attention to continue ',
   },
 ];
 
 export default welcome;
+
+// {
+//   key: 0,
+//   title: 'welcome',
+//   phrase: "Welcome to Kichi's World!",
+// },
+// {
+//   key: 3,
+//   title: 'joke after clicking',
+//   phrase: 'I love the attention hihi',
+//   //action: "clicking on Kichi",
+// },

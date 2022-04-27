@@ -46,3 +46,5 @@ border-color: transparent;
 border-color: orange;
 }
 }
+
+https://sebhastian.com/setinterval-react/
