@@ -23,6 +23,7 @@ const FirstPage = () => {
   const [conPcolor, setConPcolor] = useState('');
 
   const [show, setShow] = useState(false);
+  //const [isGreen, setIsGreen] = useState(false);
 
   let UserInfo = [];
 
@@ -39,9 +40,6 @@ const FirstPage = () => {
       { conPassword: conPassword },
     ];
 
-    // push the information to the last property in the welcome array
-    welcome.push(UserInfo);
-
     if (userName.length > 8) {
       setEUserName('');
       setUColor('green');
@@ -50,11 +48,11 @@ const FirstPage = () => {
       setUColor('red');
     }
 
-    if (email.includes('@gmail')) {
+    if (email.includes('@') && email.includes('.com')) {
       setEEmail('');
       setEColor('green');
     } else {
-      setEEmail('this website accepts just an email address from Gmail');
+      setEEmail('Must be a valid email address');
       setEColor('red');
     }
 
@@ -66,12 +64,25 @@ const FirstPage = () => {
       setPColor('red');
     }
 
-    if (password != '' && password === conPassword) {
+    if (password !== '' && password === conPassword) {
       setEConPassword('');
       setConPcolor('green');
     } else {
       setEConPassword('Passwords not matched');
       setConPcolor('red');
+    }
+    //! push the information to the last property in the welcome array
+    if (
+      uColor === 'green' &&
+      eColor === 'green' &&
+      pColor === 'green' &&
+      conPcolor === 'green'
+    ) {
+      welcome.push(UserInfo);
+      console.log(UserInfo);
+      console.log(welcome);
+    } else {
+      console.log('shit');
     }
   };
 
@@ -129,7 +140,7 @@ const FirstPage = () => {
           </div>
           <div className="input-field">
             <input
-              type="text"
+              type="password"
               placeholder="confirm password"
               className="form-input"
               style={{ borderColor: conPcolor }}
