@@ -1,12 +1,12 @@
 //! READY TO USE, waiting for routing
 
-import './FirstPage.css';
-import './bubbles.css';
+import './Registration.css';
+import './assets/bubbles.css';
 
 import { useState, useEffect } from 'react';
 import welcome from './bubble_texts/welcome_text';
 
-const FirstPage = (props) => {
+const Registration = (props) => {
   const [userName, setUserName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -164,4 +164,4 @@ const FirstPage = (props) => {
   );
 };
 
-export default FirstPage;
+export default Registration;

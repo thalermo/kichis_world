@@ -1,4 +1,4 @@
-import kichi from '../images/kichi.webp';
+import kichi from '../../images/kichi.webp';
 import './Kichi.css';
 
 const Kichi = (props) => (
