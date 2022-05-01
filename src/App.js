@@ -15,17 +15,17 @@ import { SelectButton, SubmitBtn } from './components/assets/Buttons';
 //import { StartButton, PlusButton, SelectButton } from './components/Buttons';
 
 // Pages display as components
-import Registration from './components/Registration';
+//import Registration from './components/Registration';
 
 // CSS files:
 import './App.css';
 
 function App() {
   // state for iteration the welcome_text array
-  const [indexCounter, setIndexCounter] = useState(1);
-  const [status, setStatus] = useState('');
-  console.log(status);
-  // const [show, setShow] = useState(false);
+  //! const [indexCounter, setIndexCounter] = useState(1);
+  //! const [status, setStatus] = useState('');
+  //! console.log(status);
+  //! const [show, setShow] = useState(false);
 
   // info state, to get inputs from the user
 
@@ -33,23 +33,24 @@ function App() {
   //   setInterval(() => setShow(true), 5000);
   // }, []);
 
-  // clicking on the figure will iterating the text array
-  const handleFigureClick = () => {
-    setIndexCounter(indexCounter + 1);
-    console.log('click');
-    console.log(indexCounter);
-  };
+  //! clicking on the figure will iterating the text array
+  // const handleFigureClick = () => {
+  //   setIndexCounter(indexCounter + 1);
+  //   console.log('click');
+  //   console.log(indexCounter);
+  // };
 
   return (
     <div className="App">
-      {status === '' && <Registration status={status} setStatus={setStatus} />}
+      {/* {status === '' && <Registration status={status} setStatus={setStatus} />}
       {status === 'yes' && (
         <div className="stage">
           <BubbleKichi text={welcome} indexCounter={indexCounter} />
           <Kichi action={handleFigureClick} />
           <SubmitBtn />
         </div>
-      )}
+      )} */}
+      <Home />
     </div>
   );
 }

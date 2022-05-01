@@ -24,7 +24,8 @@ const Registration = (props) => {
 
   const [show, setShow] = useState(false);
 
-  let UserInfo = [];
+  // declearing a new user object
+  let newUser = {};
 
   useEffect(() => {
     setInterval(() => setShow(true), 8000);
@@ -33,7 +34,7 @@ const Registration = (props) => {
   const validate = () => {
     console.log(userName, email, password, conPassword);
 
-    if (userName.length > 8) {
+    if (userName.length > 4) {
       setEUserName('');
       setUColor('green');
     } else {
@@ -74,21 +75,28 @@ const Registration = (props) => {
     pColor === 'green' &&
     conPcolor === 'green'
   ) {
-    UserInfo = [
-      {
-        userName: userName,
-        email: email,
-        password: password,
-        // conPassword: conPassword,
-      },
-    ];
-    console.log(UserInfo);
-    welcome.push(UserInfo);
-    console.log(welcome);
+    newUser = {
+      userName: userName,
+      email: email,
+      password: password,
+      // conPassword: conPassword,
+    };
+
+    // console.log(UserInfo);
+    // welcome.push(UserInfo);
+    // console.log(welcome);
     props.setStatus('yes');
   } else {
-    console.log('shit');
+    console.log('not ready to login ');
   }
+
+  const registerUser = (event) => {
+    event.preventDefault();
+    const users = JSON.parse(localStorage.getItem('users') || '[]');
+    users.push(newUser);
+    localStorage.setItem('users', JSON.stringify(users));
+    alert('Registration is successful');
+  };
 
   return (
     <div className="page1">
@@ -102,7 +110,8 @@ const Registration = (props) => {
         </div>
 
         <div className="brand-logo pixel-border"></div>
-        <div className="form-inputs">
+        {/* Added the submit form to send data to the local storage   */}
+        <form className="form-inputs" onSubmit={registerUser}>
           <div className="input-field">
             <input
               type="text"
@@ -160,7 +169,7 @@ const Registration = (props) => {
               SUBMIT
             </button>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   );
