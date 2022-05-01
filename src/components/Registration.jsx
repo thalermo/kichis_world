@@ -32,12 +32,6 @@ const Registration = (props) => {
 
   const validate = () => {
     console.log(userName, email, password, conPassword);
-    UserInfo = [
-      { userName: userName },
-      { email: email },
-      { password: password },
-      { conPassword: conPassword },
-    ];
 
     if (userName.length > 8) {
       setEUserName('');
@@ -80,8 +74,16 @@ const Registration = (props) => {
     pColor === 'green' &&
     conPcolor === 'green'
   ) {
-    welcome.push(UserInfo);
+    UserInfo = [
+      {
+        userName: userName,
+        email: email,
+        password: password,
+        // conPassword: conPassword,
+      },
+    ];
     console.log(UserInfo);
+    welcome.push(UserInfo);
     console.log(welcome);
     props.setStatus('yes');
   } else {
