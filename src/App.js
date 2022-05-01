@@ -1,24 +1,10 @@
-import React, { useEffect, useState } from 'react';
+//import React, { useEffect, useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Home from './components/Home';
-// script js file with array and objects
-import welcome from './components/bubble_texts/welcome_text';
-
-// figure bubble speech above and user bubble underneath the figure
-import BubbleKichi from './components/assets/BubbleKichi';
-//import BubbleUser from './components/BubbleUser';
-
-// just the figure with click function
-import Kichi from './components/assets/Kichi';
-
-// the btns components
-import { SelectButton, SubmitBtn } from './components/assets/Buttons';
-//import { StartButton, PlusButton, SelectButton } from './components/Buttons';
-
-// Pages display as components
-//import Registration from './components/Registration';
+import Registration from './components/Registration';
+import Dashboard from './components/Dashboard';
 
 // CSS files:
-import './App.css';
 
 function App() {
   // state for iteration the welcome_text array
@@ -42,15 +28,11 @@ function App() {
 
   return (
     <div className="App">
-      {/* {status === '' && <Registration status={status} setStatus={setStatus} />}
-      {status === 'yes' && (
-        <div className="stage">
-          <BubbleKichi text={welcome} indexCounter={indexCounter} />
-          <Kichi action={handleFigureClick} />
-          <SubmitBtn />
-        </div>
-      )} */}
-      <Home />
+      <Routes>
+        <Route path="/" element={<Home />} exact />
+        <Route path="/reg" element={<Registration />} />
+        <Route path="/dash" element={<Dashboard />} />
+      </Routes>
     </div>
   );
 }

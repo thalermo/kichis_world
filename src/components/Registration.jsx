@@ -1,12 +1,10 @@
 //! READY TO USE, waiting for routing
-
 import './Registration.css';
-import './assets/bubbles.css';
 
 import { useState, useEffect } from 'react';
-import welcome from './bubble_texts/welcome_text';
+//import welcome from './bubble_texts/welcome_text';
 
-const Registration = (props) => {
+const Registration = () => {
   const [userName, setUserName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -23,6 +21,7 @@ const Registration = (props) => {
   const [conPcolor, setConPcolor] = useState('');
 
   const [show, setShow] = useState(false);
+  //const [status, setStatus] = useState('');
 
   // declearing a new user object
   let newUser = {};
@@ -65,10 +64,8 @@ const Registration = (props) => {
       setEConPassword('Passwords not matched');
       setConPcolor('red');
     }
-    //! push the information to the last property in the welcome array
   };
 
-  //Todo: try to polish the code after finishing some stuff
   if (
     uColor === 'green' &&
     eColor === 'green' &&
@@ -82,25 +79,27 @@ const Registration = (props) => {
       // conPassword: conPassword,
     };
 
+    //setStatus('yes');
     // console.log(UserInfo);
     // welcome.push(UserInfo);
     // console.log(welcome);
-    props.setStatus('yes');
   } else {
     console.log('not ready to login ');
   }
+  //console.log(status);
 
   const registerUser = (event) => {
     event.preventDefault();
     const users = JSON.parse(localStorage.getItem('users') || '[]');
+    //! push the information to the last property in the welcome array
     users.push(newUser);
     localStorage.setItem('users', JSON.stringify(users));
     alert('Registration is successful');
   };
 
   return (
-    <div className="page1">
-      <div className=" frame">
+    <div className="reg">
+      <div className=" frame reg">
         <div className="bubble_speech_bg">
           {!show ? (
             <h1 className="type_effect title">Welcome to Kichi's World!</h1>
@@ -165,7 +164,7 @@ const Registration = (props) => {
             <small>{eConPassword}</small>
           </div>
           <div className="input-field">
-            <button className="submit-btn " onClick={validate}>
+            <button className="submit-btn reg" onClick={validate}>
               SUBMIT
             </button>
           </div>

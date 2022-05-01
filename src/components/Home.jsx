@@ -1,14 +1,16 @@
 //! READY TO USE, waiting for routing
 
 import './Home.css';
-
+import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+
 //import welcome from './bubble_texts/welcome_text';
 
 const Home = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [show, setShow] = useState(false);
+  const navigate = useNavigate();
 
   useEffect(() => {
     setInterval(() => setShow(true), 8000);
@@ -34,23 +36,22 @@ const Home = () => {
     if (i === 1) {
       alert('Login Successful');
       localStorage.setItem('loggedIn', 'yes');
+      navigate('/dash');
     } else {
       alert('Invalid Login');
     }
   };
 
   return (
-    <div className="page1 ">
-      <div className=" frame ">
-        <div className="bubble_speech_bg ">
+    <div className="home ">
+      <div className=" frame home">
+        <div className="bubble_home ">
           {!show ? (
             <h1 className="type_effect title ">Welcome to Kichi's World!</h1>
           ) : (
-            <h1 className="type_effect title ">Login to get started</h1>
+            <h1 className="type_effect title "> Login to get started</h1>
           )}
         </div>
-
-        <div className="brand-logo pixel-border "></div>
 
         <div className="form-inputs ">
           <div className="input-field ">
