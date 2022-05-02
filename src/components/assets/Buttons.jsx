@@ -28,3 +28,7 @@ export const StartButton = () => {
 export const SubmitBtn = () => {
   return <button className="submit-btn ">SUBMIT</button>;
 };
+
+export const Tasuku = () => {
+  return <button className="submit-btn ">TASUKU</button>;
+};

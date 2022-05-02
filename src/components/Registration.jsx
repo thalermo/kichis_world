@@ -2,6 +2,7 @@
 import './Registration.css';
 
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 //import welcome from './bubble_texts/welcome_text';
 
 const Registration = () => {
@@ -21,10 +22,11 @@ const Registration = () => {
   const [conPcolor, setConPcolor] = useState('');
 
   const [show, setShow] = useState(false);
+  const navigate = useNavigate();
   //const [status, setStatus] = useState('');
 
-  // declearing a new user object
-  let newUser = {};
+  // declaring a new user object
+  // const [newUser, setNewUser] = useState({});
 
   useEffect(() => {
     setInterval(() => setShow(true), 8000);
@@ -66,35 +68,31 @@ const Registration = () => {
     }
   };
 
-  if (
-    uColor === 'green' &&
-    eColor === 'green' &&
-    pColor === 'green' &&
-    conPcolor === 'green'
-  ) {
-    newUser = {
-      userName: userName,
-      email: email,
-      password: password,
-      // conPassword: conPassword,
-    };
-
-    //setStatus('yes');
-    // console.log(UserInfo);
-    // welcome.push(UserInfo);
-    // console.log(welcome);
-  } else {
-    console.log('not ready to login ');
-  }
   //console.log(status);
 
   const registerUser = (event) => {
     event.preventDefault();
-    const users = JSON.parse(localStorage.getItem('users') || '[]');
-    //! push the information to the last property in the welcome array
-    users.push(newUser);
-    localStorage.setItem('users', JSON.stringify(users));
-    alert('Registration is successful');
+    if (
+      uColor === 'green' &&
+      eColor === 'green' &&
+      pColor === 'green' &&
+      conPcolor === 'green'
+    ) {
+      let myUser = {
+        userName: userName,
+        email: email,
+        password: password,
+        // conPassword: conPassword,
+      };
+      const users = JSON.parse(localStorage.getItem('users') || '[]');
+      //! push the information to the last property in the welcome array
+      users.push(myUser);
+      localStorage.setItem('users', JSON.stringify(users));
+      alert('Registration is successful');
+      navigate('/dash');
+    } else {
+      console.log('not ready to login ');
+    }
   };
 
   return (
