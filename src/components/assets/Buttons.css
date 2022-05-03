@@ -13,6 +13,7 @@
   justify-content: space-evenly;
   width: max-content;
   height: max-content;
+  margin-top: 20rem;
 }
 
 /*! Plus Minus Btns */
@@ -56,6 +57,51 @@
   background-image: linear-gradient(left top, pink 3%, red 22%, maroon 99%);
   cursor: pointer;
   padding-left: 5px;
+}
+
+.video-game-button.plus {
+  background: url(../../images/thumbs_up.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  font-size: 8rem;
+}
+
+.video-game-button.plus:hover {
+  background: url(/src/images/thumbs_up.png);
+  background-repeat: no-repeat;
+  background-size: 100%;
+
+  /* max-width: 80rem; */
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  /* Animation Figure*/
+  animation: pulse 2.5s infinite;
+}
+
+.video-game-button.minus {
+  background: url(../../images/thumbs_down.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 110%;
+  font-size: 8rem;
+}
+
+.video-game-button.minus:hover {
+  background: url(/src/images/thumbs_down.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 110%;
+
+  /* max-width: 80rem; */
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  /* Animation Figure*/
+  animation: pulse 2.5s infinite;
 }
 
 .StartButton_container {

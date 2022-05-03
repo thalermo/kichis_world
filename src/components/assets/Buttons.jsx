@@ -4,9 +4,10 @@ import exit from '../../images/exit_btn.jpeg';
 export const PlusButton = (props) => {
   return (
     <div className="plus-minus--buttons ">
-      <button onClick={props.action} className="video-game-button plus-grid">
-        +
-      </button>
+      <button
+        onClick={props.action}
+        className="video-game-button plus-grid plus"
+      ></button>
     </div>
   );
 };
@@ -14,9 +15,10 @@ export const PlusButton = (props) => {
 export const MinusButton = (props) => {
   return (
     <div className="plus-minus--buttons ">
-      <button onClick={props.action} className="video-game-button minus-grid">
-        -
-      </button>
+      <button
+        onClick={props.action}
+        className="video-game-button minus-grid minus"
+      ></button>
     </div>
   );
 };

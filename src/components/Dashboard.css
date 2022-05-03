@@ -14,6 +14,7 @@
   justify-content: center;
   height: 100vh;
   align-items: center;
+  position: relative;
 
   /* padding-top: 30%; */
   /* padding-left: 12%; */
@@ -37,7 +38,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  min-height: 20%;
+  min-height: 30%;
   width: 65rem;
   min-width: 50rem;
 
@@ -62,7 +63,7 @@
 .type_effect--dash {
   font-family: retro-gaming, Courier, monospace;
   position: relative;
-  left: 3rem;
+  left: 2.2rem;
   bottom: 1rem;
   font-size: var(--font-size);
   width: max-content;
@@ -134,10 +135,31 @@ input::placeholder {
 }
 
 .exit-image {
-  background: url(../images/exit_btn.jpeg);
-  width: 20rem;
-  height: 20rem;
+  position: absolute;
+
+  left: 13rem;
+  top: -5rem;
+  right: 10rem;
+  /*transform: rotate(deg);*/
+  background: url(../images/exist_pixel_tilt.png);
+  width: 50rem;
+  height: 25rem;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 100%;
+  background-size: 40%;
+}
+
+.exit-image:hover {
+  background: url(../images/exist_pixel_tilt.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 40%;
+
+  /* max-width: 80rem; */
+  -moz-transition: all 0.2s ease-in;
+  -o-transition: all 0.2s ease-in;
+  -webkit-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  /* Animation Figure*/
+  animation: pulse 2.5s infinite;
 }
