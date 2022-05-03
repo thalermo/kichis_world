@@ -1,20 +1,13 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import './Todo.css';
 import { TodoBtn } from './Buttons';
 
-// const year = current.getFullYear();
-// const month = current.getMonth();
-// const day = current.getDay();
-
-//console.log(year, month, day);
-
 const Todo = () => {
-  //const [userName, setUserName] = useState('');
   const [oneTask, setOneTask] = useState('');
   const [taskList, setTaskList] = useState([]);
-  //const [taskTime, setTaskTime] = useState('');
-  const [taskDate, setDate] = useState('');
+  const navigate = useNavigate();
 
   const addTask = () => {
     setTaskList([...taskList, oneTask]);
@@ -27,9 +20,6 @@ const Todo = () => {
       '-' +
       (today.getDay() + 1);
 
-    // let task2local = {
-    //   task: oneTask,
-
     let localEntry = JSON.parse(localStorage.getItem('users'));
     let currentUserEntry = localStorage.getItem('currentUser');
 
@@ -41,27 +31,18 @@ const Todo = () => {
     localEntry[index] = {
       ...localEntry[index],
       task: oneTask,
-      time: taskDateStamp,
+      timeStamp: taskDateStamp,
     };
 
     //console.log(localEntry);
     //console.log(localStorage);
     localStorage.setItem('users', JSON.stringify(localEntry));
+    if (oneTask !== '') {
+      alert('Tasuku is set!');
+      navigate('/dash');
+    }
+
     //console.log(localStorage);
-  };
-
-  const taskListContent = taskList.map((task, index) => {
-    return (
-      <div key={index}>
-        <button onClick={() => handleDelete(index)}></button>
-      </div>
-    );
-  });
-
-  const handleDelete = (index) => {
-    const duplicateArray = [...taskList];
-    duplicateArray.splice(index, 1);
-    setTaskList(duplicateArray);
   };
 
   return (
@@ -81,11 +62,9 @@ const Todo = () => {
               setOneTask(e.target.value);
             }}
           />
-
           <TodoBtn action={addTask} />
         </div>
       </div>
-      {taskListContent}
     </div>
   );
 };

@@ -1,17 +1,22 @@
 import './Buttons.css';
+import exit from '../../images/exit_btn.jpeg';
 
-export const PlusButton = () => {
+export const PlusButton = (props) => {
   return (
     <div className="plus-minus--buttons ">
-      <div className="video-game-button plus-grid">+</div>
+      <button onClick={props.action} className="video-game-button plus-grid">
+        +
+      </button>
     </div>
   );
 };
 
-export const MinusButton = () => {
+export const MinusButton = (props) => {
   return (
     <div className="plus-minus--buttons ">
-      <div className="video-game-button minus-grid">-</div>
+      <button onClick={props.action} className="video-game-button minus-grid">
+        -
+      </button>
     </div>
   );
 };
@@ -48,6 +53,9 @@ export const TodoBtn = (props) => {
   );
 };
 
+export const Exit = (props) => {
+  return <div className="exit-image" onClick={props.action} />;
+};
 // export const PlusButton = () => {
 //   return (
 //     <div className="plus-minus--buttons ">

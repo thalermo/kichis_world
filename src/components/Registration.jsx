@@ -84,6 +84,7 @@ const Registration = () => {
         password: password,
         task: '',
         time: '',
+        timeStamp: '',
         // conPassword: conPassword,
       };
       const users = JSON.parse(localStorage.getItem('users') || '[]');
@@ -91,7 +92,7 @@ const Registration = () => {
       users.push(myUser);
       localStorage.setItem('users', JSON.stringify(users));
       alert('Registration is successful');
-      navigate('/dash');
+      navigate('/');
     } else {
       console.log('not ready to login ');
     }

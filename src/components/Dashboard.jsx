@@ -2,16 +2,12 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 // script js file with array and objects
 import welcome from './bubble_texts/welcome_text';
-
 // figure bubble speech above and user bubble underneath the figure
 import BubbleKichi from './assets/BubbleKichi';
-
 // just the figure with click function
 import Kichi from './assets/Kichi';
-
 // the btns components
-import { MinusButton, PlusButton, Tasuku } from './assets/Buttons';
-
+import { Exit, MinusButton, PlusButton, Tasuku } from './assets/Buttons';
 // CSS files:
 import './Dashboard.css';
 
@@ -39,6 +35,18 @@ const Dashboard = () => {
   //   }
   // }, []);
 
+  let localEntry = JSON.parse(localStorage.getItem('users'));
+  let currentUserEntry = localStorage.getItem('currentUser');
+
+  //getting just number
+  let index = localEntry.findIndex(
+    (element) => element.email === currentUserEntry
+  );
+
+  let task = localEntry[index].task;
+  let userName = localEntry[index].userName;
+  console.log(task, userName);
+
   //! clicking on the figure will iterating the text array
   const handleFigureClick = () => {
     setIndexCounter(indexCounter + 1);
@@ -49,25 +57,48 @@ const Dashboard = () => {
     navigate('/todo');
   };
 
+  const handleComplete = () => {
+    alert("you complete your Tasuku! I'm so proud of you" + userName);
+  };
+
+  const handleFailed = () => {
+    alert(userName + "This time you didn't completed the Tasuku:/");
+  };
+
+  const handleLogOut = () => {
+    alert('See you later');
+    localStorage.removeItem('currentUser');
+    localStorage.removeItem('loggedIn');
+    navigate('/');
+  };
+
   return (
     <div className="stage">
-      {status === '' && (
+      <Exit action={handleLogOut} />
+      {task === '' && (
         <BubbleKichi text={welcome} indexCounter={indexCounter} />
       )}
-
-      {status === 'tasuku' && (
+      {task === '' && (
         <div className="bubble_speech--dash">
           <div className="type_effect--dash">
             Kanken! Click on the Tasuku button...
           </div>
         </div>
       )}
+
+      {task !== '' && (
+        <div className="bubble_speech--dash">
+          <div className="type_effect--dash">{`${userName.toUpperCase()} Your Daily Tasuku: ${task.toUpperCase()}`}</div>
+        </div>
+      )}
+
       <div className="figure-btns-wrapper">
-        <MinusButton />
+        <MinusButton action={handleFailed} />
         <Kichi action={handleFigureClick} />
-        <PlusButton />
+        <PlusButton action={handleComplete} />
       </div>
-      <Tasuku action={handleClick} />
+      {/* // display or hide the button  */}
+      {task === '' ? <Tasuku action={handleClick} /> : null}
     </div>
   );
 };

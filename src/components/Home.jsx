@@ -9,8 +9,10 @@ import { useState, useEffect } from 'react';
 const Home = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [userName, setUserName] = useState('');
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
+  let currentUser;
 
   useEffect(() => {
     setInterval(() => setShow(true), 8000);
@@ -37,6 +39,38 @@ const Home = () => {
       alert('Login Successful');
       localStorage.setItem('loggedIn', 'yes');
       localStorage.setItem('currentUser', email);
+
+      // Set the time after the login
+      const today = new Date();
+      const taskDateStamp =
+        today.getFullYear() +
+        '-' +
+        (today.getMonth() + 1) +
+        '-' +
+        (today.getDay() + 1);
+
+      let localEntry = JSON.parse(localStorage.getItem('users'));
+      let currentUserEntry = localStorage.getItem('currentUser');
+
+      //getting just number
+      let index = localEntry.findIndex(
+        (element) => element.email === currentUserEntry
+      );
+
+      localEntry[index] = {
+        ...localEntry[index],
+        time: taskDateStamp,
+      };
+
+      localStorage.setItem('users', JSON.stringify(localEntry));
+
+      // getting the info of the user from the local Storage
+      //todo: why I can't update the state
+      currentUser = localEntry[index].userName;
+      console.log(currentUser);
+      // setUserName(currentUser);
+      // console.log(userName);
+
       navigate('/dash');
     } else {
       alert('Invalid Login');

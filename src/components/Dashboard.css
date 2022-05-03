@@ -132,3 +132,12 @@
 input::placeholder {
   font-size: 18px;
 }
+
+.exit-image {
+  background: url(../images/exit_btn.jpeg);
+  width: 20rem;
+  height: 20rem;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
