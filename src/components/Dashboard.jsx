@@ -10,18 +10,18 @@ import BubbleKichi from './assets/BubbleKichi';
 import Kichi from './assets/Kichi';
 
 // the btns components
-import { Tasuku } from './assets/Buttons';
+import { MinusButton, PlusButton, Tasuku } from './assets/Buttons';
 
 // CSS files:
 import './Dashboard.css';
 
 const Dashboard = () => {
   // state for iteration the welcome_text array
-
+  const navigate = useNavigate();
   const [indexCounter, setIndexCounter] = useState(1);
   //const [status, setStatus] = useState('');
   //console.log(status);
-  //const [show, setShow] = useState(false);
+  const [status, setStatus] = useState('');
 
   // info state, to get inputs from the user
 
@@ -44,11 +44,30 @@ const Dashboard = () => {
     setIndexCounter(indexCounter + 1);
   };
 
+  const handleClick = () => {
+    setStatus('tasuku');
+    navigate('/todo');
+  };
+
   return (
     <div className="stage">
-      <BubbleKichi text={welcome} indexCounter={indexCounter} />
-      <Kichi action={handleFigureClick} />
-      <Tasuku />
+      {status === '' && (
+        <BubbleKichi text={welcome} indexCounter={indexCounter} />
+      )}
+
+      {status === 'tasuku' && (
+        <div className="bubble_speech--dash">
+          <div className="type_effect--dash">
+            Kanken! Click on the Tasuku button...
+          </div>
+        </div>
+      )}
+      <div className="figure-btns-wrapper">
+        <MinusButton />
+        <Kichi action={handleFigureClick} />
+        <PlusButton />
+      </div>
+      <Tasuku action={handleClick} />
     </div>
   );
 };

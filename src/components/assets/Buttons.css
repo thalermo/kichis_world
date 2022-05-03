@@ -11,21 +11,14 @@
 .plus-minus--buttons {
   display: flex;
   justify-content: space-evenly;
-  width: 70%;
-  height: 8%;
-}
-
-/* Grid the buttons */
-.plus-grid {
-}
-
-.minus-grid {
+  width: max-content;
+  height: max-content;
 }
 
 /*! Plus Minus Btns */
 .video-game-button {
   text-shadow: 1px 1px pink, -1px -1px maroon;
-  font-size: 5rem;
+  font-size: 7rem;
   border-radius: 100%;
   font-family: 'Press Start 2p';
   line-height: 5em;
@@ -33,8 +26,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 5%;
-  height: 70%;
+  width: 10rem;
+  height: 10rem;
   -webkit-border-radius: 0.75em;
   -moz-border-radius: 0.75em;
   -o-border-radius: 0.75em;

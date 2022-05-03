@@ -44,3 +44,14 @@
 - place on the doors some japanese words
 
 I done this -- npm install react react-dom
+
+---
+
+function mergeLocalStorage(key, obj){
+var newObj = JSON.parse(localStorage.getItem(key));
+for (var k in obj){
+newObj[k] = obj[k];
+}
+localStorage.setItem(key, JSON.stringify(newObj));
+return newObj;
+}

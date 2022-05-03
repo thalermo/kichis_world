@@ -82,6 +82,8 @@ const Registration = () => {
         userName: userName,
         email: email,
         password: password,
+        task: '',
+        time: '',
         // conPassword: conPassword,
       };
       const users = JSON.parse(localStorage.getItem('users') || '[]');

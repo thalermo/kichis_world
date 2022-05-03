@@ -36,6 +36,7 @@ const Home = () => {
     if (i === 1) {
       alert('Login Successful');
       localStorage.setItem('loggedIn', 'yes');
+      localStorage.setItem('currentUser', email);
       navigate('/dash');
     } else {
       alert('Invalid Login');

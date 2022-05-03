@@ -4,13 +4,16 @@ export const PlusButton = () => {
   return (
     <div className="plus-minus--buttons ">
       <div className="video-game-button plus-grid">+</div>
-      <div className="video-game-button minus-grid">-</div>
     </div>
   );
 };
 
 export const MinusButton = () => {
-  return;
+  return (
+    <div className="plus-minus--buttons ">
+      <div className="video-game-button minus-grid">-</div>
+    </div>
+  );
 };
 
 export const SelectButton = () => {
@@ -29,6 +32,27 @@ export const SubmitBtn = () => {
   return <button className="submit-btn ">SUBMIT</button>;
 };
 
-export const Tasuku = () => {
-  return <button className="submit-btn ">TASUKU</button>;
+export const Tasuku = (props) => {
+  return (
+    <button onClick={props.action} className="submit-btn ">
+      TASUKU
+    </button>
+  );
 };
+
+export const TodoBtn = (props) => {
+  return (
+    <button onClick={props.action} className="submit-btn setTasuku">
+      SET TASUKU
+    </button>
+  );
+};
+
+// export const PlusButton = () => {
+//   return (
+//     <div className="plus-minus--buttons ">
+//       <div className="video-game-button plus-grid">+</div>
+//       <div className="video-game-button minus-grid">-</div>
+//     </div>
+//   );
+// };

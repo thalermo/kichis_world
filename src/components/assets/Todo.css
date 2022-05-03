@@ -2,12 +2,7 @@
   --bg-color: rgb(255, 255, 255);
   --typewriterSpeed: 3s;
   --typewriterCharacters: 24;
-  --font-size: 2rem;
-}
-
-* {
-  box-sizing: border-box;
-  font-size: 10px;
+  --font-size: 2.4rem;
 }
 
 @font-face {
@@ -16,51 +11,72 @@
   font-style: normal;
 }
 
-/*  Bubble Shape Element          */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 10px;
+}
+.todo {
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
 
-.bubble_speech_bg {
+.todo-frame {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-image: url(../../images/todo.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 140rem;
+  width: 100%;
+  height: 100%;
+}
+
+.todo--bubble {
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  min-height: 20%;
+  min-height: 14rem;
   width: 55rem;
   min-width: 50rem;
-
-  /* background-color: rgb(255, 248, 248); */
-
-  background-image: url(/src/images/Speech_bubble_white.png);
+  background-image: url(../../images/login_bubble.png);
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: center;
-
-  /* background-color: cornsilk; */
-  /* background-color: rgb(225, 0, 146); */
 }
 
-.user-input {
-  font-family: 'retro-gaming';
-  font-size: 3rem;
-  width: 95%;
+.task-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 30rem;
+
+  height: 40rem;
+  width: 55rem;
+}
+
+.type_effect--todo {
+  margin-left: 3rem;
+  margin-bottom: 3rem;
 }
 
 /* Animation typing text */
-.type_effect {
+.type_effect--todo {
   font-family: retro-gaming, Courier, monospace;
   position: relative;
-  left: 3rem;
-  bottom: 1rem;
+
   font-size: var(--font-size);
   width: max-content;
   background: var(--bg-color);
-
-  /** to center the typing text  and filling the gap of the background*/
-  /* margin-bottom: 8%;
-  margin-left: 1%;
-  padding: 3rem; */
 }
 
-.type_effect::before,
-.type_effect::after {
+.type_effect--todo::before,
+.type_effect--todo::after {
   content: '';
   position: absolute;
   top: 0;
@@ -69,13 +85,13 @@
   left: 0;
 }
 
-.type_effect::before {
+.type_effect--todo::before {
   background: var(--bg-color);
   animation: typewriter var(--typewriterSpeed)
     steps(var(--typewriterCharacters)) 1s forwards;
 }
 
-.type_effect::after {
+.type_effect--todo::after {
   width: 0.125em;
   background: black;
   animation: typewriter var(--typewriterSpeed)
@@ -112,4 +128,33 @@
   &:focus {
     color: teal;
   }
+}
+
+.user-input {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 4px black dotted;
+
+  width: 80%;
+  padding-left: 1rem;
+
+  font-family: 'retro-gaming';
+  font-size: 3rem;
+}
+
+.user-input::placeholder {
+  font-size: 2.5rem;
+}
+
+.setTasuku.submit-btn {
+  margin-top: 5rem;
+  margin-left: 5rem;
+  font-size: 2rem;
+}
+
+.setTasuku.submit-btn:hover {
+  font-size: 2.3rem;
+  background: #8aa9df90;
+  color: white;
+  text-shadow: 4px 3px 0px #6a6a6a;
 }
