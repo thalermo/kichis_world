@@ -74,3 +74,9 @@ todo 4.5.22:
 2hp sick
 1hp dying
 0ph die XOXO
+
+starts logic
+if it's more then 5, then create starts. get the info from the local storage
+from the hp! opacity is still clickble, Yes or No
+game over screen and delete user
+instead of alert put text in a state and place it in those scenarios
