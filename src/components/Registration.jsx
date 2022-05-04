@@ -80,10 +80,19 @@ const Registration = () => {
       pColor === 'green' &&
       conPcolor === 'green'
     ) {
+      const today = new Date();
+      const registrationDate =
+        today.getFullYear() +
+        '-' +
+        (today.getMonth() + 1) +
+        '-' +
+        (today.getDay() + 1);
+
       let myUser = {
         userName: userName,
         email: email,
         password: password,
+        regDate: registrationDate,
         task: '',
         time: '',
         timeStamp: '',

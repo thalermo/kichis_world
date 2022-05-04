@@ -41,7 +41,7 @@ export const SubmitBtn = () => {
 
 export const Tasuku = (props) => {
   return (
-    <button onClick={props.action} className="submit-btn ">
+    <button onClick={props.action} className="submit-btn enterTasuku">
       TASUKU
     </button>
   );
@@ -58,14 +58,6 @@ export const TodoBtn = (props) => {
 export const Exit = (props) => {
   return <div className="exit-image" onClick={props.action} />;
 };
-// export const PlusButton = () => {
-//   return (
-//     <div className="plus-minus--buttons ">
-//       <div className="video-game-button plus-grid">+</div>
-//       <div className="video-game-button minus-grid">-</div>
-//     </div>
-//   );
-// };
 
 export const TurnonBtn = (props) => {
   return <div className="turnon-image" onClick={props.action} />;

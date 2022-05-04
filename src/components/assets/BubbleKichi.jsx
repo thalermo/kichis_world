@@ -1,6 +1,7 @@
 // import welcome from "./bubble_texts/welcome_text";
 import './bubbles.css';
 import React, { useState, useEffect } from 'react';
+import { regDate, now } from '../bubble_texts/welcome_text.js';
 
 function BubbleKichi(props) {
   const [counter, setCounter] = useState(0);
@@ -21,13 +22,23 @@ function BubbleKichi(props) {
   // (render)
   return (
     <div className="bubble_speech_bg">
-      {counter < 2 && (
-        <div className="type_effect">{props.text[counter].phrase}</div>
+      {counter <= 1 && now === regDate && (
+        <div className="type_effect">{props.text[counter].phrase[0]}</div>
       )}
 
-      {props.indexCounter >= 2 && (
+      {counter <= 1 && now !== regDate && (
+        <div className="type_effect">{props.text[counter].phrase[1]}</div>
+      )}
+
+      {props.indexCounter >= 2 && now === regDate && (
         <div className="type_effect">
-          {props.text[props.indexCounter].phrase}
+          {props.text[props.indexCounter].phrase[0]}
+        </div>
+      )}
+
+      {props.indexCounter >= 2 && now !== regDate && (
+        <div className="type_effect">
+          {props.text[props.indexCounter].phrase[1]}
         </div>
       )}
     </div>

@@ -196,3 +196,12 @@ input::placeholder {
   /* Animation Figure*/
   animation: pulse 2.5s infinite;
 }
+
+.submit-btn.enterTasuku {
+  margin-right: 20rem;
+  margin-bottom: 5rem;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

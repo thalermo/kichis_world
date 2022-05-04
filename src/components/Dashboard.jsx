@@ -9,6 +9,7 @@ import Kichi from './assets/Kichi';
 // the btns components
 import { MinusButton, PlusButton, Tasuku, TurnonBtn } from './assets/Buttons';
 // CSS files:
+
 import './Dashboard.css';
 
 const Dashboard = () => {
@@ -18,6 +19,7 @@ const Dashboard = () => {
   //const [status, setStatus] = useState('');
   //console.log(status);
   const [status, setStatus] = useState('');
+  const [show, setShow] = useState(false);
 
   // info state, to get inputs from the user
 
@@ -133,17 +135,17 @@ const Dashboard = () => {
 
   return (
     <div className="stage">
-      <div className="top-stage">{/* <Exit action={handleLogOut} /> */}</div>
+      <div className="top-stage"></div>
       {task === '' && (
         <BubbleKichi text={welcome} indexCounter={indexCounter} />
       )}
-      {task === '' && (
+      {/* {task === '' && (
         <div className="bubble_speech--dash">
           <div className="type_effect--dash">
             Kanken! Click on the Tasuku button...
           </div>
         </div>
-      )}
+      )} */}
 
       {task !== '' && (
         <div className="bubble_speech--dash">
