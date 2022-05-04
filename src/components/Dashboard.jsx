@@ -7,13 +7,7 @@ import BubbleKichi from './assets/BubbleKichi';
 // just the figure with click function
 import Kichi from './assets/Kichi';
 // the btns components
-import {
-  Exit,
-  MinusButton,
-  PlusButton,
-  Tasuku,
-  TurnonBtn,
-} from './assets/Buttons';
+import { MinusButton, PlusButton, Tasuku, TurnonBtn } from './assets/Buttons';
 // CSS files:
 import './Dashboard.css';
 
@@ -52,9 +46,23 @@ const Dashboard = () => {
   let task = localEntry[index].task;
   let userName = localEntry[index].userName;
   let currentUserHP = localEntry[index].hp;
+  let now = localEntry[index].time;
+  let taskTime = localEntry[index].timeStamp;
   //console.log(task, userName, currentUserHP);
   const [hpValue, SetHpValue] = useState(currentUserHP);
-  console.log(currentUserHP);
+  //console.log(currentUserHP);
+  console.log(now, taskTime);
+
+  //taskTime = '2001-3-4';
+  //* the logic of the show Tasuku btn, if the task is empty and also if the day is over. check line 167 🫡
+
+  if (now !== taskTime) {
+    localEntry[index] = {
+      ...localEntry[index],
+      task: '',
+    };
+    localStorage.setItem('users', JSON.stringify(localEntry));
+  }
 
   //! clicking on the figure will iterating the text array
   const handleFigureClick = () => {

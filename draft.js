@@ -17,3 +17,13 @@
 {
   /* <FirstPage /> */
 }
+
+//! Logic when you logged but didn't give a feedback about your Tasuku!
+// else if (!currentUserHP) {
+//   SetHpValue(hpValue - 1);
+//   localEntry[index] = {
+//     ...localEntry[index],
+//     hp: hpValue,
+//   };
+//   localStorage.setItem('users', JSON.stringify(localEntry));
+//   alert('hp has been updated🥳');

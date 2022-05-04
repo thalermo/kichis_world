@@ -58,17 +58,19 @@ return newObj;
 
 todo 4.5.22:
 
-1. set the points, test the point system v
-2. API for quotes
-3. logic with the daily tasuku
-4. if you didn't log your success, get -1ph
-5. change the appearance of Kichi according to the points v
+1. set the points, test the point system ✅
+2. logic with the daily tasuku display Tsuku in a different date ✅
+3. change the appearance of Kichi according to the points ✅
+4. API for quotes
+5. if you didn't log your success, get -1ph (optional for vol.21)
+6. Deployment
+7. README file with lots of credits
+8. starts trophies!!
+9. to change the alert to the nice pack
+10. tutorial HOW TO SECTION
 
 4hp warning
 3hp mad
 2hp sick
 1hp dying
 0ph die XOXO
-
-deployment
-README file with lots of credits
