@@ -23,6 +23,8 @@ const Registration = () => {
 
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
+  // user health points
+  const healthPoints = 5;
   //const [status, setStatus] = useState('');
 
   // declaring a new user object
@@ -85,6 +87,7 @@ const Registration = () => {
         task: '',
         time: '',
         timeStamp: '',
+        hp: healthPoints,
         // conPassword: conPassword,
       };
       const users = JSON.parse(localStorage.getItem('users') || '[]');

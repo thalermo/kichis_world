@@ -9,10 +9,11 @@ import { useState, useEffect } from 'react';
 const Home = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [userName, setUserName] = useState('');
+  //const [userName, setUserName] = useState('');
   const [show, setShow] = useState(false);
   const navigate = useNavigate();
   let currentUser;
+  let currentUserHP;
 
   useEffect(() => {
     setInterval(() => setShow(true), 8000);
@@ -51,6 +52,7 @@ const Home = () => {
 
       let localEntry = JSON.parse(localStorage.getItem('users'));
       let currentUserEntry = localStorage.getItem('currentUser');
+      currentUserHP = 4;
 
       //getting just number
       let index = localEntry.findIndex(
@@ -60,6 +62,7 @@ const Home = () => {
       localEntry[index] = {
         ...localEntry[index],
         time: taskDateStamp,
+        hp: currentUserHP,
       };
 
       localStorage.setItem('users', JSON.stringify(localEntry));
@@ -67,7 +70,12 @@ const Home = () => {
       // getting the info of the user from the local Storage
       //todo: why I can't update the state
       currentUser = localEntry[index].userName;
+      //! access to HP value in the local storage
+      currentUserHP = localEntry[index].hp;
       console.log(currentUser);
+      console.log(currentUserHP);
+      localStorage.setItem('users', JSON.stringify(localEntry));
+
       // setUserName(currentUser);
       // console.log(userName);
 

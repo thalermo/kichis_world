@@ -51,7 +51,8 @@ const Dashboard = () => {
 
   let task = localEntry[index].task;
   let userName = localEntry[index].userName;
-  console.log(task, userName);
+  let currentUserHP = localEntry[index].hp;
+  console.log(task, userName, currentUserHP);
 
   //! clicking on the figure will iterating the text array
   const handleFigureClick = () => {
@@ -64,8 +65,26 @@ const Dashboard = () => {
   };
 
   const handleComplete = () => {
+    currentUserHP = 1;
     alert("you complete your Tasuku! I'm so proud of you" + userName);
+    if (currentUserHP >= 5) {
+      alert('start🌟');
+    } else if (currentUserHP === 4) {
+      alert('behave please ☝️');
+    } else if (currentUserHP === 3) {
+      alert("i'm so mad 😡");
+    } else if (currentUserHP === 2) {
+      alert("i'm so sick 🤢 ");
+    } else if (currentUserHP === 1) {
+      alert("i'm dying, MAYDAY!");
+    } else alert('GAME OVER');
   };
+
+  localEntry[index] = {
+    ...localEntry[index],
+    hp: currentUserHP,
+  };
+  localStorage.setItem('users', JSON.stringify(localEntry));
 
   const handleFailed = () => {
     alert(userName + "This time you didn't completed the Tasuku:/");
@@ -102,7 +121,7 @@ const Dashboard = () => {
         <MinusButton action={handleFailed} />
         <Kichi action={handleFigureClick} />
         <PlusButton action={handleComplete} />
-        <TurnonBtn />
+        <TurnonBtn action={handleLogOut} />
       </div>
       {/* // display or hide the button  */}
       {task === '' ? <Tasuku action={handleClick} /> : null}
