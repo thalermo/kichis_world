@@ -1,13 +1,3 @@
-@keyframes pulse {
-  0%,
-  100% {
-    animation-timing-function: ease-in;
-  }
-  50% {
-    transform: scale(1.33);
-  }
-}
-
 .figure_container {
   width: 35%;
   display: flex;
@@ -28,7 +18,7 @@
 #hover-me:hover {
   background: url(/src/images/kichi_figure.png);
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: 99%;
 
   /* max-width: 80rem; */
   -moz-transition: all 0.2s ease-in;
@@ -36,5 +26,21 @@
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
   /* Animation Figure*/
-  animation: pulse 2.5s infinite;
+  animation: pulse 3s infinite;
 }
+
+@keyframes pulse {
+  10% {
+    transform: scale(1.1);
+  }
+}
+
+/* @keyframes pulse {
+  0%,
+  100% {
+    animation-timing-function: ease-in;
+  }
+  50% {
+    transform: scale(1.33);
+  }
+} */

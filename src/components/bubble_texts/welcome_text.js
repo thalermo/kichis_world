@@ -10,6 +10,7 @@ let index = localEntry.findIndex(
   (element) => element.email === currentUserEntry
 );
 
+// getting the info from the local storage!
 export let regDate = localEntry[index].regDate;
 export let task = localEntry[index].task;
 export let userName = localEntry[index].userName;
@@ -29,10 +30,7 @@ const welcome = [
   {
     key: 1,
     title: 'Kichi appearers',
-    phrase: [
-      'Please tap on me to continue',
-      'you remember to tap to on me to continue',
-    ],
+    phrase: ['Please tap on me to continue', 'Tap to on me to continue'],
   },
   {
     key: 2,
@@ -48,7 +46,7 @@ const welcome = [
     title: 'set a Tasuku  ',
     phrase: [
       `Click on the Tasuku Button below`,
-      `${userName} harry up to set your daily Tasuku`,
+      `Harry up to set your daily Tasuku`,
     ],
   },
   {

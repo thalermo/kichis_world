@@ -41,7 +41,7 @@ export const SubmitBtn = () => {
 
 export const Tasuku = (props) => {
   return (
-    <button onClick={props.action} className="submit-btn enterTasuku">
+    <button onClick={props.action} className="submit-btn" id="enter">
       TASUKU
     </button>
   );
