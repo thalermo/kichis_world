@@ -66,3 +66,7 @@ export const Exit = (props) => {
 //     </div>
 //   );
 // };
+
+export const TurnonBtn = (props) => {
+  return <div className="turnon-image" onClick={props.action} />;
+};

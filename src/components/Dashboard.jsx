@@ -7,7 +7,13 @@ import BubbleKichi from './assets/BubbleKichi';
 // just the figure with click function
 import Kichi from './assets/Kichi';
 // the btns components
-import { Exit, MinusButton, PlusButton, Tasuku } from './assets/Buttons';
+import {
+  Exit,
+  MinusButton,
+  PlusButton,
+  Tasuku,
+  TurnonBtn,
+} from './assets/Buttons';
 // CSS files:
 import './Dashboard.css';
 
@@ -74,7 +80,7 @@ const Dashboard = () => {
 
   return (
     <div className="stage">
-      <Exit action={handleLogOut} />
+      <div className="top-stage">{/* <Exit action={handleLogOut} /> */}</div>
       {task === '' && (
         <BubbleKichi text={welcome} indexCounter={indexCounter} />
       )}
@@ -96,6 +102,7 @@ const Dashboard = () => {
         <MinusButton action={handleFailed} />
         <Kichi action={handleFigureClick} />
         <PlusButton action={handleComplete} />
+        <TurnonBtn />
       </div>
       {/* // display or hide the button  */}
       {task === '' ? <Tasuku action={handleClick} /> : null}
