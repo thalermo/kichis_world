@@ -52,7 +52,9 @@ const Dashboard = () => {
   let task = localEntry[index].task;
   let userName = localEntry[index].userName;
   let currentUserHP = localEntry[index].hp;
-  console.log(task, userName, currentUserHP);
+  //console.log(task, userName, currentUserHP);
+  const [hpValue, SetHpValue] = useState(currentUserHP);
+  console.log(currentUserHP);
 
   //! clicking on the figure will iterating the text array
   const handleFigureClick = () => {
@@ -65,8 +67,35 @@ const Dashboard = () => {
   };
 
   const handleComplete = () => {
-    currentUserHP = 1;
     alert("you complete your Tasuku! I'm so proud of you" + userName);
+    currentUserHP++;
+    //alert(currentUserHP);
+    //SetHpValue(currentUserHP + 1);
+    //currentUserHP++;
+    if (currentUserHP >= 5) {
+      alert('start🌟');
+    } else if (currentUserHP === 4) {
+      alert('Arigatō, but keep it up');
+    } else if (currentUserHP === 3) {
+      alert("I feel better, I'm still mad 🧐");
+    } else if (currentUserHP === 2) {
+      alert("you saved me, but I'm still sick. Keep going ");
+    } else if (currentUserHP === 1) {
+      alert("I'm dying, MAYDAY!");
+    } else alert('GAME OVER');
+
+    localEntry[index] = {
+      ...localEntry[index],
+      hp: currentUserHP,
+    };
+    localStorage.setItem('users', JSON.stringify(localEntry));
+    SetHpValue(currentUserHP);
+  };
+
+  const handleFailed = () => {
+    alert(userName + "This time you didn't completed the Tasuku:/");
+    // SetHpValue(currentUserHP - 1);
+    currentUserHP--;
     if (currentUserHP >= 5) {
       alert('start🌟');
     } else if (currentUserHP === 4) {
@@ -78,16 +107,13 @@ const Dashboard = () => {
     } else if (currentUserHP === 1) {
       alert("i'm dying, MAYDAY!");
     } else alert('GAME OVER');
-  };
 
-  localEntry[index] = {
-    ...localEntry[index],
-    hp: currentUserHP,
-  };
-  localStorage.setItem('users', JSON.stringify(localEntry));
-
-  const handleFailed = () => {
-    alert(userName + "This time you didn't completed the Tasuku:/");
+    localEntry[index] = {
+      ...localEntry[index],
+      hp: Number(currentUserHP),
+    };
+    localStorage.setItem('users', JSON.stringify(localEntry));
+    SetHpValue(currentUserHP);
   };
 
   const handleLogOut = () => {
@@ -119,7 +145,12 @@ const Dashboard = () => {
 
       <div className="figure-btns-wrapper">
         <MinusButton action={handleFailed} />
-        <Kichi action={handleFigureClick} />
+
+        <Kichi
+          hpValue={hpValue}
+          // SetHpValue={SetHpValue}
+          action={handleFigureClick}
+        />
         <PlusButton action={handleComplete} />
         <TurnonBtn action={handleLogOut} />
       </div>

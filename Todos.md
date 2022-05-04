@@ -58,14 +58,17 @@ return newObj;
 
 todo 4.5.22:
 
-1. set the points, test the point system
+1. set the points, test the point system v
 2. API for quotes
 3. logic with the daily tasuku
 4. if you didn't log your success, get -1ph
-5. change the appearance of Kichi according to the points
+5. change the appearance of Kichi according to the points v
 
 4hp warning
 3hp mad
 2hp sick
 1hp dying
 0ph die XOXO
+
+deployment
+README file with lots of credits

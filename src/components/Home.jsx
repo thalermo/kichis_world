@@ -43,7 +43,7 @@ const Home = () => {
 
       // Set the time after the login
       const today = new Date();
-      const taskDateStamp =
+      const currentTime =
         today.getFullYear() +
         '-' +
         (today.getMonth() + 1) +
@@ -52,7 +52,7 @@ const Home = () => {
 
       let localEntry = JSON.parse(localStorage.getItem('users'));
       let currentUserEntry = localStorage.getItem('currentUser');
-      currentUserHP = 4;
+      //currentUserHP = 4;
 
       //getting just number
       let index = localEntry.findIndex(
@@ -61,8 +61,8 @@ const Home = () => {
 
       localEntry[index] = {
         ...localEntry[index],
-        time: taskDateStamp,
-        hp: currentUserHP,
+        time: currentTime,
+        //hp: currentUserHP,
       };
 
       localStorage.setItem('users', JSON.stringify(localEntry));
