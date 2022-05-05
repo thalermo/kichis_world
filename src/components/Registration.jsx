@@ -113,7 +113,7 @@ const Registration = () => {
   return (
     <div className="reg">
       <div className=" frame reg">
-        <div className="bubble_speech_bg">
+        <div id="bubbleReg" className="bubble_speech_bg">
           {!show ? (
             <h1 className="type_effect title">Welcome to Kichi's World!</h1>
           ) : (

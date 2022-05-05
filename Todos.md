@@ -69,6 +69,7 @@ todo 4.5.22:
 9. to change the alert to the nice pack
 10. tutorial HOW TO SECTION
 11. add a registration btn
+12. register btn in the login page
 
 4hp warning
 3hp mad
@@ -84,3 +85,5 @@ instead of alert put text in a state and place it in those scenarios
 
 login count with a new property in the login page! and after 10 times something happen
 game over in another route!
+
+- doesn't work on firefox
