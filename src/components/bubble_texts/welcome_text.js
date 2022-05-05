@@ -2,25 +2,6 @@
 
 // getting the data from the local storage
 
-let localEntry = JSON.parse(localStorage.getItem('users'));
-let currentUserEntry = localStorage.getItem('currentUser');
-
-//getting just number
-let index = localEntry.findIndex(
-  (element) => element.email === currentUserEntry
-);
-
-// getting the info from the local storage!
-export let regDate = localEntry[index].regDate;
-export let task = localEntry[index].task;
-export let userName = localEntry[index].userName;
-export let currentUserHP = localEntry[index].hp;
-export let now = localEntry[index].time;
-export let taskTime = localEntry[index].timeStamp;
-
-console.log(task, userName, currentUserHP, now, taskTime);
-
-//let userName = 'Dan';
 const welcome = [
   {
     key: 0,
@@ -35,10 +16,7 @@ const welcome = [
   {
     key: 2,
     title: 'tutorial',
-    phrase: [
-      `Nice to meet you ${userName}!`,
-      `${userName} I love the attention `,
-    ],
+    phrase: [`Nice to meet you !`, `I love the attention `],
   },
 
   {
@@ -52,11 +30,28 @@ const welcome = [
   {
     key: 4,
     title: 'Tasuku info  ',
-    phrase: [
-      `Tasuku is a Task in Japanese`,
-      `${userName} the Tasuku is waiting`,
-    ],
+    phrase: [`Tasuku is a Task in Japanese`, ` the Tasuku is waiting`],
   },
 ];
 
 export default welcome;
+
+// let localEntry = JSON.parse(localStorage.getItem('users'));
+// let currentUserEntry = localStorage.getItem('currentUser');
+
+//getting just number
+// let index = localEntry.findIndex(
+//   (element) => element.email === currentUserEntry
+// );
+
+// // getting the info from the local storage!
+// export let regDate = localEntry[index].regDate;
+// export let task = localEntry[index].task;
+// export let userName = localEntry[index].userName;
+// export let currentUserHP = localEntry[index].hp;
+// export let now = localEntry[index].time;
+// export let taskTime = localEntry[index].timeStamp;
+
+// console.log(task, userName, currentUserHP, now, taskTime);
+
+//let userName = 'Dan';

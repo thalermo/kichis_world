@@ -2,7 +2,6 @@
 
 import '../Dashboard.css';
 import React, { useState, useEffect } from 'react';
-import { regDate, now } from '../bubble_texts/welcome_text.js';
 
 function BubbleKichi(props) {
   const [counter, setCounter] = useState(0);
@@ -23,21 +22,21 @@ function BubbleKichi(props) {
   // (render)
   return (
     <div className="bubble_speech--dash">
-      {counter <= 1 && now === regDate && (
+      {counter <= 1 && props.now === props.regDate && (
         <div className="type_effect--dash">{props.text[counter].phrase[0]}</div>
       )}
 
-      {counter <= 1 && now !== regDate && (
+      {counter <= 1 && props.now !== props.regDate && (
         <div className="type_effect--dash">{props.text[counter].phrase[1]}</div>
       )}
 
-      {props.indexCounter >= 2 && now === regDate && (
+      {props.indexCounter >= 2 && props.now === props.regDate && (
         <div className="type_effect--dash">
           {props.text[props.indexCounter].phrase[0]}
         </div>
       )}
 
-      {props.indexCounter >= 2 && now !== regDate && (
+      {props.indexCounter >= 2 && props.now !== props.regDate && (
         <div className="type_effect--dash">
           {props.text[props.indexCounter].phrase[1]}
         </div>

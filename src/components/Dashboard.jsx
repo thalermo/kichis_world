@@ -50,6 +50,7 @@ const Dashboard = () => {
   let currentUserHP = localEntry[index].hp;
   let now = localEntry[index].time;
   let taskTime = localEntry[index].timeStamp;
+  let regDate = localEntry[index].regDate;
   //console.log(task, userName, currentUserHP);
   const [hpValue, SetHpValue] = useState(currentUserHP);
   //console.log(currentUserHP);
@@ -137,7 +138,12 @@ const Dashboard = () => {
     <div className="stage">
       <div className="top-stage"></div>
       {task === '' && (
-        <BubbleKichi text={welcome} indexCounter={indexCounter} />
+        <BubbleKichi
+          text={welcome}
+          indexCounter={indexCounter}
+          now={now}
+          regDate={regDate}
+        />
       )}
       {/* {task === '' && (
         <div className="bubble_speech--dash">
