@@ -21,6 +21,7 @@ const Dashboard = () => {
   //console.log(status);
   const [status, setStatus] = useState('');
   const [show, setShow] = useState(false);
+  //const [gameOver, setGameOver] = useState(false);
 
   // info state, to get inputs from the user
 
@@ -94,14 +95,26 @@ const Dashboard = () => {
       alert("you saved me, but I'm still sick. Keep going ");
     } else if (currentUserHP === 1) {
       alert("I'm dying, MAYDAY!");
-    } else alert('GAME OVER');
+    } else {
+      alert('GAME OVER');
+    }
 
-    localEntry[index] = {
-      ...localEntry[index],
-      hp: currentUserHP,
-    };
-    localStorage.setItem('users', JSON.stringify(localEntry));
-    SetHpValue(currentUserHP);
+    //! GAME OVER LOGIC
+
+    if (currentUserHP > 0) {
+      localEntry[index] = {
+        ...localEntry[index],
+        hp: currentUserHP,
+      };
+      localStorage.setItem('users', JSON.stringify(localEntry));
+      SetHpValue(currentUserHP);
+    } else {
+      localEntry[index] = {};
+      localStorage.setItem('users', JSON.stringify(localEntry));
+      localStorage.removeItem('currentUser');
+      localStorage.removeItem('loggedIn');
+      navigate('/reg');
+    }
   };
 
   const handleFailed = () => {
@@ -118,14 +131,26 @@ const Dashboard = () => {
       alert("i'm so sick 🤢 ");
     } else if (currentUserHP === 1) {
       alert("i'm dying, MAYDAY!");
-    } else alert('GAME OVER');
+    } else {
+      alert('GAME OVER');
+    }
 
-    localEntry[index] = {
-      ...localEntry[index],
-      hp: Number(currentUserHP),
-    };
-    localStorage.setItem('users', JSON.stringify(localEntry));
-    SetHpValue(currentUserHP);
+    //! GAME OVER LOGIC
+    //todo: to solve the empty object thing with Marc
+    if (currentUserHP > 0) {
+      localEntry[index] = {
+        ...localEntry[index],
+        hp: currentUserHP,
+      };
+      localStorage.setItem('users', JSON.stringify(localEntry));
+      SetHpValue(currentUserHP);
+    } else {
+      localEntry[index] = {};
+      localStorage.setItem('users', JSON.stringify(localEntry));
+      localStorage.removeItem('currentUser');
+      localStorage.removeItem('loggedIn');
+      navigate('/reg');
+    }
   };
 
   const handleLogOut = () => {
