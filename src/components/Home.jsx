@@ -3,6 +3,7 @@
 import './Home.css';
 import { useNavigate } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { RegBtn } from './assets/Buttons';
 
 //import welcome from './bubble_texts/welcome_text';
 
@@ -11,6 +12,8 @@ const Home = () => {
   const [password, setPassword] = useState('');
   //const [userName, setUserName] = useState('');
   const [show, setShow] = useState(false);
+  const [isMouseOver, setMouseOver] = useState(false);
+
   const navigate = useNavigate();
   let currentUser;
   let currentUserHP;
@@ -85,14 +88,32 @@ const Home = () => {
     }
   };
 
+  const handleRegisterEntry = () => {
+    navigate('/reg');
+  };
+
+  const handleMouseOver = () => {
+    setMouseOver(true);
+  };
+
+  const handleMouseOut = () => {
+    setMouseOver(false);
+  };
+
   return (
     <div className="home ">
       <div className=" frame home">
         <div className="bubble_home ">
-          {!show ? (
+          {!show && !isMouseOver && (
             <h1 className="type_effect title ">Welcome to Kichi's World!</h1>
-          ) : (
-            <h1 className="type_effect title "> Login to get started</h1>
+          )}
+          {show && !isMouseOver && (
+            <h1 className="type_effect title ">Login to get started</h1>
+          )}
+          {isMouseOver && (
+            <h1 className="type_effect title ">
+              Click on this button to sign up!
+            </h1>
           )}
         </div>
 
@@ -130,6 +151,13 @@ const Home = () => {
             </button>
           </div>
         </div>
+        <RegBtn
+          action={handleRegisterEntry}
+          onMouseOver={handleMouseOver}
+          onMouseOut={handleMouseOut}
+          isMouseOver={isMouseOver}
+          setMouseOver={setMouseOver}
+        />
       </div>
     </div>
   );

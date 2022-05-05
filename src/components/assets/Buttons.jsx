@@ -62,3 +62,14 @@ export const Exit = (props) => {
 export const TurnonBtn = (props) => {
   return <div className="turnon-image" onClick={props.action} />;
 };
+
+export const RegBtn = (props) => {
+  return (
+    <div
+      className="reg-btn"
+      onClick={props.action}
+      onMouseOver={props.onMouseOver}
+      onMouseOut={props.onMouseOut}
+    />
+  );
+};

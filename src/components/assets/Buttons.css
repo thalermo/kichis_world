@@ -175,3 +175,18 @@
   box-shadow: 0 0 0 black;
   transform: translate(0, 0);
 }
+
+.reg-btn {
+  background-image: url(../../images/loginBtnvol1.png);
+  width: 8rem;
+  height: 8rem;
+  background-size: 100%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 1rem;
+}
+
+.reg-btn:hover {
+  background-image: url(../../images/loginBtnvol1_hover.png);
+}

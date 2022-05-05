@@ -11,6 +11,7 @@ import { MinusButton, PlusButton, Tasuku, TurnonBtn } from './assets/Buttons';
 // CSS files:
 
 import './Dashboard.css';
+import MotivationalQuotes from './assets/MotivationalQuotes';
 
 const Dashboard = () => {
   // state for iteration the welcome_text array
@@ -172,6 +173,7 @@ const Dashboard = () => {
       </div>
       {/* // display or hide the button  */}
       {task === '' ? <Tasuku action={handleClick} /> : null}
+      <MotivationalQuotes />
     </div>
   );
 };
