@@ -68,6 +68,7 @@ todo 4.5.22:
 8. starts trophies!!
 9. to change the alert to the nice pack
 10. tutorial HOW TO SECTION
+11. add a registration btn
 
 4hp warning
 3hp mad
@@ -77,6 +78,9 @@ todo 4.5.22:
 
 starts logic
 if it's more then 5, then create starts. get the info from the local storage
-from the hp! opacity is still clickble, Yes or No
+from the hp! opacity is still clickble, Yes or No (create an opacity 0 shape that will decrease the width )
 game over screen and delete user
 instead of alert put text in a state and place it in those scenarios
+
+login count with a new property in the login page! and after 10 times something happen
+game over in another route!
