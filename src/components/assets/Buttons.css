@@ -190,3 +190,33 @@
 .reg-btn:hover {
   background-image: url(../../images/loginBtnvol1_hover.png);
 }
+
+.logInIcon {
+  background-image: url(../../images/login_icon_vol1.png);
+  width: 8rem;
+  height: 8rem;
+  background-size: 100%;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 1rem;
+}
+
+.logInIcon:hover {
+  background-image: url(../../images/login_icon_vol3.png);
+}
+
+.returnIcon {
+  background-image: url(../../images/home_icon.png);
+  width: 6rem;
+  height: 6rem;
+  background-size: 100%;
+  position: absolute;
+  right: 0;
+  bottom: 1rem;
+  margin: 1rem;
+}
+
+.returnIcon:hover {
+  background-image: url(../../images/home_icon_hover_vol1.png);
+}

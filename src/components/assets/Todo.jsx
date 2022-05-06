@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import './Todo.css';
-import { TodoBtn } from './Buttons';
+import { ReturnIcon, TodoBtn } from './Buttons';
 
 const Todo = () => {
   const [oneTask, setOneTask] = useState('');
@@ -45,14 +45,36 @@ const Todo = () => {
     //console.log(localStorage);
   };
 
+  //! Return Icon with onmouseover, Out, action etc.
+  const [isMouseOver, setMouseOver] = useState(false);
+  const handleReturnEntry = () => {
+    navigate('/dash');
+  };
+
+  const handleMouseOver = () => {
+    setMouseOver(true);
+  };
+
+  const handleMouseOut = () => {
+    setMouseOver(false);
+  };
+
   return (
     <div className="todo stage">
       <div className="todo-frame">
         <div className="task-form">
           <div className="todo--bubble">
-            <div className=" type_effect--todo">
-              Tell me what is your daily Tasuku
-            </div>
+            {!isMouseOver && (
+              <div className=" type_effect--todo">
+                Tell me what is your daily Tasuku
+              </div>
+            )}
+
+            {isMouseOver && (
+              <div className="type_effect--tutorial">
+                Click to exit the Tasuku room!
+              </div>
+            )}
           </div>
           <input
             placeholder="write your Tasuku here..."
@@ -63,6 +85,13 @@ const Todo = () => {
             }}
           />
           <TodoBtn action={addTask} />
+          <ReturnIcon
+            action={handleReturnEntry}
+            onMouseOver={handleMouseOver}
+            onMouseOut={handleMouseOut}
+            isMouseOver={isMouseOver}
+            setMouseOver={setMouseOver}
+          />
         </div>
       </div>
     </div>

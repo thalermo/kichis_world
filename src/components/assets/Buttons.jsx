@@ -72,3 +72,25 @@ export const RegBtn = (props) => {
     />
   );
 };
+
+export const LogInIcon = (props) => {
+  return (
+    <div
+      className="logInIcon"
+      onClick={props.action}
+      onMouseOver={props.onMouseOver}
+      onMouseOut={props.onMouseOut}
+    />
+  );
+};
+
+export const ReturnIcon = (props) => {
+  return (
+    <div
+      className="returnIcon"
+      onClick={props.action}
+      onMouseOver={props.onMouseOver}
+      onMouseOut={props.onMouseOut}
+    />
+  );
+};

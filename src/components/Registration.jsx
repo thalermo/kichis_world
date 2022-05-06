@@ -3,6 +3,7 @@ import './Registration.css';
 
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { LogInIcon } from './assets/Buttons';
 //import welcome from './bubble_texts/welcome_text';
 
 const Registration = () => {
@@ -110,14 +111,34 @@ const Registration = () => {
     }
   };
 
+  //! LogIn Icon with onmouseover, Out, action etc.
+  const [isMouseOver, setMouseOver] = useState(false);
+  const handleLogInEntry = () => {
+    navigate('/home');
+  };
+
+  const handleMouseOver = () => {
+    setMouseOver(true);
+  };
+
+  const handleMouseOut = () => {
+    setMouseOver(false);
+  };
+
   return (
     <div className="reg">
       <div className=" frame reg">
         <div id="bubbleReg" className="bubble_speech_bg">
-          {!show ? (
+          {!show && !isMouseOver && (
             <h1 className="type_effect title">Welcome to Kichi's World!</h1>
-          ) : (
+          )}
+          {show && !isMouseOver && (
             <h1 className="type_effect title">Please fill out the form</h1>
+          )}
+          {isMouseOver && (
+            <h1 className="type_effect title ">
+              Click on this button to login!
+            </h1>
           )}
         </div>
 
@@ -182,6 +203,13 @@ const Registration = () => {
             </button>
           </div>
         </form>
+        <LogInIcon
+          action={handleLogInEntry}
+          onMouseOver={handleMouseOver}
+          onMouseOut={handleMouseOut}
+          isMouseOver={isMouseOver}
+          setMouseOver={setMouseOver}
+        />
       </div>
     </div>
   );
