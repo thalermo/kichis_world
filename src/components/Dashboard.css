@@ -30,6 +30,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .bubble_speech--dash {
@@ -140,10 +141,10 @@ input::placeholder {
   width: 10rem;
   height: 10rem;
   background-image: url(/src/images/switch_on_pixelv4.png);
-  background-size: 100%;
+  background-size: 10rem;
   background-repeat: no-repeat;
-  margin-bottom: 35rem;
-  margin-right: 10rem;
+  margin-bottom: 30rem;
+  margin-right: -10rem;
 }
 
 .turnon-image:hover {
@@ -162,10 +163,50 @@ input::placeholder {
 }
 
 .submit-btn#enter {
-  margin-right: 18rem;
+  margin-right: 3rem;
   margin-bottom: 5rem;
   padding: 2rem;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.starts-container1 {
+  width: 6rem;
+  height: 30rem;
+  /* background-color: green; */
+  /* background-color: green; */
+  margin-bottom: 10rem;
+  /* margin-right: -7rem; */
+  /* margin-top: 1rem; */
+  /* z-index: 1; */
+  margin-left: -30rem;
+  padding-right: 25rem;
+}
+
+.starts-container2 {
+  width: 6rem;
+  height: 24rem;
+  background-color: red;
+  margin-bottom: 10rem;
+  /* margin-left: -7rem; */
+  /* z-index: 1; */
+
+  /* transform: rotate(90deg); */
+  /* opacity: 0.5; */
+}
+
+.motivation-star {
+  width: 6rem;
+  height: 6rem;
+  background-image: url(../images/start_pixeled_vol3.png);
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+}
+
+.motivation-star:hover {
+  width: 6rem;
+  height: 6rem;
+  background-image: url(../images/start_pixeled_vol3_hover.png);
 }

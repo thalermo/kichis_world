@@ -8,6 +8,8 @@ import BubbleKichi from './assets/BubbleKichi';
 import Kichi from './assets/Kichi';
 // the btns components
 import { MinusButton, PlusButton, Tasuku, TurnonBtn } from './assets/Buttons';
+
+import Star from '../images/start_pixeled_vol3.png';
 // CSS files:
 
 import './Dashboard.css';
@@ -172,13 +174,6 @@ const Dashboard = () => {
           regDate={regDate}
         />
       )}
-      {/* {task === '' && (
-        <div className="bubble_speech--dash">
-          <div className="type_effect--dash">
-            Kanken! Click on the Tasuku button...
-          </div>
-        </div>
-      )} */}
 
       {task !== '' && (
         <div className="bubble_speech--dash">
@@ -187,6 +182,14 @@ const Dashboard = () => {
       )}
 
       <div className="figure-btns-wrapper">
+        <div className="starts-container1">
+          <div className="motivation-star" />
+          <div className="motivation-star" />
+          <div className="motivation-star" />
+          <div className="motivation-star" />
+          <div className="motivation-star" />
+        </div>
+
         <MinusButton action={handleFailed} />
 
         <Kichi
@@ -194,12 +197,19 @@ const Dashboard = () => {
           // SetHpValue={SetHpValue}
           action={handleFigureClick}
         />
+
         <PlusButton action={handleComplete} />
+        {/* <div className="starts-container2">
+          <div className="motivation-star" />
+          <div className="motivation-star" />
+          <div className="motivation-star" />
+          <div className="motivation-star" />
+        </div> */}
         <TurnonBtn action={handleLogOut} />
       </div>
+
       {/* // display or hide the button  */}
       {task === '' ? <Tasuku action={handleClick} /> : null}
-      <MotivationalQuotes />
     </div>
   );
 };

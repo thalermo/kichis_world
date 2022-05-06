@@ -66,12 +66,15 @@
   background-repeat: no-repeat;
   background-size: 100%;
   font-size: 8rem;
+  margin-left: -8rem;
+  z-index: 1;
 }
 
 .video-game-button.plus:hover {
   background: url(/src/images/thumbs_up_hover_vol2.png);
   background-repeat: no-repeat;
   background-size: 99%;
+  z-index: 1;
 
   /* max-width: 80rem; */
   /* -moz-transition: all 0.2s ease-in;
@@ -88,6 +91,8 @@
   background-repeat: no-repeat;
   background-size: 110%;
   font-size: 8rem;
+  margin-right: -6rem;
+  z-index: 1;
 }
 
 .video-game-button.minus:hover {
@@ -95,6 +100,7 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: 110%;
+  z-index: 1;
 
   /* max-width: 80rem; */
   /* -moz-transition: all 0.2s ease-in;
