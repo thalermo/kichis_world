@@ -22,7 +22,7 @@ const MotivationalQuotes = () => {
   //   console.log(randomQuote);
   // };
 
-  return <h1>Test</h1>;
+  return <h1>Test from teh Quotes Component</h1>;
 };
 
 export default MotivationalQuotes;

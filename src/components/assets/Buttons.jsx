@@ -1,5 +1,4 @@
 import './Buttons.css';
-//import exit from '../../images/exit_btn.jpeg';
 
 export const PlusButton = (props) => {
   return (

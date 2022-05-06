@@ -115,7 +115,7 @@ const Dashboard = () => {
     // SetHpValue(currentUserHP - 1);
     currentUserHP--;
     if (currentUserHP >= 5) {
-      alert('start🌟');
+      alert('you lost your starts 👹🌟');
     } else if (currentUserHP === 4) {
       alert('behave please ☝️');
     } else if (currentUserHP === 3) {
