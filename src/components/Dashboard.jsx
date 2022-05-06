@@ -21,7 +21,7 @@ const Dashboard = () => {
   //console.log(status);
   const [status, setStatus] = useState('');
   const [show, setShow] = useState(false);
-  //const [gameOver, setGameOver] = useState(false);
+  const [gameOver, setGameOver] = useState(false);
 
   // info state, to get inputs from the user
 
@@ -137,19 +137,26 @@ const Dashboard = () => {
 
     //! GAME OVER LOGIC
     //todo: to solve the empty object thing with Marc
+    console.log(currentUserHP);
+
     if (currentUserHP > 0) {
       localEntry[index] = {
         ...localEntry[index],
         hp: currentUserHP,
       };
+
       localStorage.setItem('users', JSON.stringify(localEntry));
       SetHpValue(currentUserHP);
+      console.log(currentUserHP);
+      console.log('update hp');
     } else {
       localEntry[index] = {};
       localStorage.setItem('users', JSON.stringify(localEntry));
+      SetHpValue(currentUserHP);
+      console.log(currentUserHP);
       localStorage.removeItem('currentUser');
       localStorage.removeItem('loggedIn');
-      navigate('/reg');
+      alert('delete user');
     }
   };
 
