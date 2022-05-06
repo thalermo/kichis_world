@@ -156,6 +156,7 @@ const Dashboard = () => {
       console.log(currentUserHP);
       localStorage.removeItem('currentUser');
       localStorage.removeItem('loggedIn');
+      navigate('/reg');
       alert('delete user');
     }
   };
