@@ -101,20 +101,13 @@ const Dashboard = () => {
 
     //! GAME OVER LOGIC
 
-    if (currentUserHP > 0) {
-      localEntry[index] = {
-        ...localEntry[index],
-        hp: currentUserHP,
-      };
-      localStorage.setItem('users', JSON.stringify(localEntry));
-      SetHpValue(currentUserHP);
-    } else {
-      localEntry[index] = {};
-      localStorage.setItem('users', JSON.stringify(localEntry));
-      localStorage.removeItem('currentUser');
-      localStorage.removeItem('loggedIn');
-      navigate('/reg');
-    }
+    localEntry[index] = {
+      ...localEntry[index],
+      hp: currentUserHP,
+    };
+    localStorage.setItem('users', JSON.stringify(localEntry));
+    SetHpValue(currentUserHP);
+    alert('hey from the scope');
   };
 
   const handleFailed = () => {
