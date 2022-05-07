@@ -24,6 +24,7 @@ const Dashboard = () => {
   const [status, setStatus] = useState('');
   const [show, setShow] = useState(false);
   const [gameOver, setGameOver] = useState(false);
+  const [updatedPoints, setUpdatedPoints] = useState(false);
 
   // info state, to get inputs from the user
 
@@ -110,6 +111,7 @@ const Dashboard = () => {
     localStorage.setItem('users', JSON.stringify(localEntry));
     SetHpValue(currentUserHP);
     alert('hey from the scope');
+    // updatedPoints State
   };
 
   const handleFailed = () => {

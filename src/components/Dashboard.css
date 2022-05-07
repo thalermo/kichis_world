@@ -212,8 +212,7 @@ input::placeholder {
 }
 
 /* hide the starts according to the condition from row 187-212 dash.jsx*/
-.motivation-star,
-.motivation-star:hover,
-.hidden {
+.motivation-star.hidden,
+.motivation-star:hover.hidden {
   opacity: 0;
 }
