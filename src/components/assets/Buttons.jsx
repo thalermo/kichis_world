@@ -2,10 +2,16 @@ import './Buttons.css';
 
 export const PlusButton = (props) => {
   return (
-    <div className="plus-minus--buttons ">
+    <div className="plus-minus--buttons">
       <button
         onClick={props.action}
-        className="video-game-button plus-grid plus"
+        className={
+          props.task !== ''
+            ? 'video-game-button plus-grid plus '
+            : 'video-game-button plus-grid plus hide'
+        }
+        // falsy value ↩️
+        disabled={props.task === ''}
       ></button>
     </div>
   );
@@ -16,7 +22,12 @@ export const MinusButton = (props) => {
     <div className="plus-minus--buttons ">
       <button
         onClick={props.action}
-        className="video-game-button minus-grid minus"
+        className={
+          props.task !== ''
+            ? 'video-game-button minus-grid minus '
+            : 'video-game-button minus-grid minus hide'
+        }
+        disabled={props.task === ''}
       ></button>
     </div>
   );
@@ -40,7 +51,13 @@ export const SubmitBtn = () => {
 
 export const Tasuku = (props) => {
   return (
-    <button onClick={props.action} className="submit-btn" id="enter">
+    <button
+      onClick={props.action}
+      className={props.task === '' ? 'submit-btn' : 'submit-btn hide'}
+      //todo: check this enter ID. i don't know what is doing but it shift the layout down
+      id="enter"
+      disabled={props.task !== ''}
+    >
       TASUKU
     </button>
   );

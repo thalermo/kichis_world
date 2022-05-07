@@ -146,7 +146,9 @@ const Dashboard = () => {
       console.log(currentUserHP);
       console.log('update hp');
     } else {
-      localEntry[index] = {};
+      //localEntry[index] = {};
+      // remove the user after game over
+      localEntry.splice(index, 1);
       localStorage.setItem('users', JSON.stringify(localEntry));
       SetHpValue(currentUserHP);
       console.log(currentUserHP);
@@ -163,6 +165,7 @@ const Dashboard = () => {
     localStorage.removeItem('loggedIn');
     navigate('/');
   };
+  // TASUKU STATE
 
   return (
     <div className="stage">
@@ -184,14 +187,39 @@ const Dashboard = () => {
 
       <div className="figure-btns-wrapper">
         <div className="starts-container1">
-          <div className="motivation-star" />
-          <div className="motivation-star" />
-          <div className="motivation-star" />
-          <div className="motivation-star" />
-          <div className="motivation-star" />
+          <div
+            className={
+              currentUserHP < 6 ? 'motivation-star hidden' : 'motivation-star'
+            }
+            disabled={currentUserHP < 6}
+          />
+          <div
+            className={
+              currentUserHP < 6 ? 'motivation-star hidden' : 'motivation-star'
+            }
+            disabled={currentUserHP < 6}
+          />
+          <div
+            className={
+              currentUserHP < 6 ? 'motivation-star hidden' : 'motivation-star'
+            }
+            disabled={currentUserHP < 6}
+          />
+          <div
+            className={
+              currentUserHP < 6 ? 'motivation-star hidden' : 'motivation-star'
+            }
+            disabled={currentUserHP < 6}
+          />
+          <div
+            className={
+              currentUserHP < 6 ? 'motivation-star hidden' : 'motivation-star'
+            }
+            disabled={currentUserHP < 6}
+          />
         </div>
 
-        <MinusButton action={handleFailed} />
+        <MinusButton action={handleFailed} task={task} />
 
         <Kichi
           hpValue={hpValue}
@@ -199,18 +227,11 @@ const Dashboard = () => {
           action={handleFigureClick}
         />
 
-        <PlusButton action={handleComplete} />
-        {/* <div className="starts-container2">
-          <div className="motivation-star" />
-          <div className="motivation-star" />
-          <div className="motivation-star" />
-          <div className="motivation-star" />
-        </div> */}
+        <PlusButton action={handleComplete} task={task} />
         <TurnonBtn action={handleLogOut} />
       </div>
 
-      {/* // display or hide the button  */}
-      {task === '' ? <Tasuku action={handleClick} /> : null}
+      <Tasuku action={handleClick} task={task} />
     </div>
   );
 };
