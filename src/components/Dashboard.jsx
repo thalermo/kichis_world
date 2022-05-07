@@ -114,10 +114,11 @@ const Dashboard = () => {
 
   const handleFailed = () => {
     alert(userName + "This time you didn't completed the Tasuku:/");
-    // SetHpValue(currentUserHP - 1);
-    currentUserHP--;
+
+    // currentUserHP = currentUserHP <= 5 ? currentUserHP - 1 : 5;
+    currentUserHP = Math.min(currentUserHP - 1, 5);
     if (currentUserHP >= 5) {
-      alert('you lost your starts 👹🌟');
+      alert('you lost your stars 👹🌟');
     } else if (currentUserHP === 4) {
       alert('behave please ☝️');
     } else if (currentUserHP === 3) {
