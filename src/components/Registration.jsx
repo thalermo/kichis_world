@@ -114,7 +114,7 @@ const Registration = () => {
   //! LogIn Icon with onmouseover, Out, action etc.
   const [isMouseOver, setMouseOver] = useState(false);
   const handleLogInEntry = () => {
-    navigate('/home');
+    navigate('/');
   };
 
   const handleMouseOver = () => {

@@ -62,10 +62,10 @@
 .type_effect--dash {
   font-family: retro-gaming, Courier, monospace;
   position: relative;
-  left: 5rem;
+  left: 2.7rem;
   bottom: 1rem;
   /*! Font size*/
-  font-size: 2.5rem;
+  font-size: 2rem;
   width: max-content;
   background: rgb(255, 255, 255);
 
