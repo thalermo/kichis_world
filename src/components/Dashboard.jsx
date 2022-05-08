@@ -9,11 +9,10 @@ import Kichi from './assets/Kichi';
 // the btns components
 import { MinusButton, PlusButton, Tasuku, TurnonBtn } from './assets/Buttons';
 
-import Star from '../images/start_pixeled_vol3.png';
 // CSS files:
 
 import './Dashboard.css';
-import MotivationalQuotes from './assets/MotivationalQuotes';
+//import MotivationalQuotes from './assets/MotivationalQuotes';
 
 const Dashboard = () => {
   // state for iteration the welcome_text array
@@ -22,9 +21,9 @@ const Dashboard = () => {
   //const [status, setStatus] = useState('');
   //console.log(status);
   const [status, setStatus] = useState('');
-  const [show, setShow] = useState(false);
-  const [gameOver, setGameOver] = useState(false);
-  const [updatedPoints, setUpdatedPoints] = useState(false);
+  //const [show, setShow] = useState(false);
+  //const [gameOver, setGameOver] = useState(false);
+  // const [updatedPoints, setUpdatedPoints] = useState(false);
 
   // info state, to get inputs from the user
 
