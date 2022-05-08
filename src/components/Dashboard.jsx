@@ -12,6 +12,7 @@ import { MinusButton, PlusButton, Tasuku, TurnonBtn } from './assets/Buttons';
 // CSS files:
 
 import './Dashboard.css';
+
 //import MotivationalQuotes from './assets/MotivationalQuotes';
 
 const Dashboard = () => {

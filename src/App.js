@@ -4,6 +4,7 @@ import Home from './components/Home';
 import Registration from './components/Registration';
 import Dashboard from './components/Dashboard';
 import Todo from './components/assets/Todo';
+import GameOver from './components/GameOver';
 
 // CSS files:
 
@@ -34,6 +35,7 @@ function App() {
         <Route path="/reg" element={<Registration />} />
         <Route path="/dash" element={<Dashboard />} />
         <Route path="/todo" element={<Todo />} />
+        <Route path="/over" element={<GameOver />} />
       </Routes>
     </div>
   );
