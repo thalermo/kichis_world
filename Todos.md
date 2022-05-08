@@ -79,7 +79,7 @@ todo 4.5.22:
 
 starts logic
 if it's more then 5, then create starts. get the info from the local storage
-from the hp! opacity is still clickble, Yes or No (create an opacity 0 shape that will decrease the width )
+from the hp! opacity is still clickable, Yes or No (create an opacity 0 shape that will decrease the width )
 game over screen and delete user
 instead of alert put text in a state and place it in those scenarios
 

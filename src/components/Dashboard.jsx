@@ -33,6 +33,8 @@ const Dashboard = () => {
   // }, []);
 
   //! ADD at the end of the project to avoid an access from ppl
+  //! ADD at the end of the project to avoid an access from ppl
+  //! ADD at the end of the project to avoid an access from ppl
   //const navigate = useNavigate();
   // useEffect(() => {
   //   const loggedIn = localStorage.getItem('loggedIn');
