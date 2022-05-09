@@ -5,6 +5,7 @@ import Registration from './components/Registration';
 import Dashboard from './components/Dashboard';
 import Todo from './components/assets/Todo';
 import GameOver from './components/GameOver';
+import MotivationalQuotes from './components/assets/MotivationalQuotes';
 
 // CSS files:
 
@@ -36,6 +37,7 @@ function App() {
         <Route path="/dash" element={<Dashboard />} />
         <Route path="/todo" element={<Todo />} />
         <Route path="/over" element={<GameOver />} />
+        <Route path="/mot" element={<MotivationalQuotes />} />
       </Routes>
     </div>
   );

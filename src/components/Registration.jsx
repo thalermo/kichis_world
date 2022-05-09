@@ -38,7 +38,7 @@ const Registration = () => {
   const validate = () => {
     console.log(userName, email, password, conPassword);
 
-    if (userName.length > 4) {
+    if (userName.length > 1) {
       setEUserName('');
       setUColor('green');
     } else {
@@ -148,7 +148,7 @@ const Registration = () => {
           <div className="input-field">
             <input
               type="text"
-              placeholder="username"
+              placeholder="name"
               className="form-input"
               style={{ borderColor: uColor }}
               value={userName}

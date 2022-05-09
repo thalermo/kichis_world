@@ -10,7 +10,7 @@ import Kichi from './assets/Kichi';
 import { MinusButton, PlusButton, Tasuku, TurnonBtn } from './assets/Buttons';
 
 // CSS files:
-
+import MotivationalQuotes from './assets/MotivationalQuotes';
 import './Dashboard.css';
 
 //import MotivationalQuotes from './assets/MotivationalQuotes';
@@ -19,6 +19,7 @@ const Dashboard = () => {
   // state for iteration the welcome_text array
   const navigate = useNavigate();
   const [indexCounter, setIndexCounter] = useState(1);
+  const [randomQuote, setRandomQuote] = useState('');
   //const [status, setStatus] = useState('');
   //console.log(status);
   const [status, setStatus] = useState('');
@@ -119,7 +120,7 @@ const Dashboard = () => {
   const handleFailed = () => {
     alert(userName + "This time you didn't completed the Tasuku:/");
 
-    // currentUserHP = currentUserHP <= 5 ? currentUserHP - 1 : 5;
+    //currentUserHP = currentUserHP <= 5 ? currentUserHP - 1 : 5;
     currentUserHP = Math.min(currentUserHP - 1, 5);
     if (currentUserHP >= 5) {
       alert('you lost your stars 👹🌟');
