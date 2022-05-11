@@ -75,6 +75,22 @@
   padding: 3rem; */
 }
 
+.type_effect--dash.quote {
+  font-family: retro-gaming, Courier, monospace;
+  position: relative;
+  left: 4rem;
+  bottom: 1rem;
+  /*! Font size*/
+  font-size: 3rem;
+  width: max-content;
+  background: rgb(255, 255, 255);
+
+  /** to center the typing text  and filling the gap of the background*/
+  /* margin-bottom: 8%;
+  margin-left: 1%;
+  padding: 3rem; */
+}
+
 .type_effect--dash::before,
 .type_effect--dash::after {
   content: '';

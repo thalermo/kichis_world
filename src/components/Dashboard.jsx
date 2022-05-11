@@ -10,7 +10,12 @@ import Kichi from './assets/Kichi';
 import { MinusButton, PlusButton, Tasuku, TurnonBtn } from './assets/Buttons';
 
 // CSS files:
-import MotivationalQuotes from './assets/MotivationalQuotes';
+import {
+  getQuote,
+  shortQuotes,
+  getRandomQuote,
+} from './assets/motivationalQuotes';
+
 import './Dashboard.css';
 
 //import MotivationalQuotes from './assets/MotivationalQuotes';
@@ -19,11 +24,11 @@ const Dashboard = () => {
   // state for iteration the welcome_text array
   const navigate = useNavigate();
   const [indexCounter, setIndexCounter] = useState(1);
-  const [randomQuote, setRandomQuote] = useState('');
+  const [quote, setQuote] = useState('');
   //const [status, setStatus] = useState('');
   //console.log(status);
   const [status, setStatus] = useState('');
-  //const [show, setShow] = useState(false);
+  const [showQuote, setShowQuote] = useState(false);
   //const [gameOver, setGameOver] = useState(false);
   // const [updatedPoints, setUpdatedPoints] = useState(false);
 
@@ -73,6 +78,7 @@ const Dashboard = () => {
       task: '',
     };
     localStorage.setItem('users', JSON.stringify(localEntry));
+    //setShow(false);
   }
 
   //! clicking on the figure will iterating the text array
@@ -150,6 +156,13 @@ const Dashboard = () => {
       SetHpValue(currentUserHP);
       console.log(currentUserHP);
       console.log('update hp');
+
+      getQuote().then((data) => {
+        let short = shortQuotes(data);
+        let randomQuote = getRandomQuote(short);
+        setQuote(randomQuote);
+        setShowQuote(true);
+      });
     } else {
       //localEntry[index] = {};
       // remove the user after game over
@@ -184,9 +197,15 @@ const Dashboard = () => {
         />
       )}
 
-      {task !== '' && (
+      {task !== '' && showQuote === false && (
         <div className="bubble_speech--dash">
           <div className="type_effect--dash">{`${userName.toUpperCase()} Your Daily Tasuku: ${task.toUpperCase()}`}</div>
+        </div>
+      )}
+
+      {task !== '' && showQuote === true && (
+        <div className="bubble_speech--dash ">
+          <div className="type_effect--dash quote">{quote}</div>
         </div>
       )}
 

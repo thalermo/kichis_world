@@ -41,6 +41,12 @@ function BubbleKichi(props) {
           {props.text[props.indexCounter].phrase[1]}
         </div>
       )}
+
+      {props.indexCounter >= 2 && props.now !== props.regDate && (
+        <div className="type_effect--dash">
+          {props.text[props.indexCounter].phrase[1]}
+        </div>
+      )}
     </div>
   );
 }
